@@ -8,20 +8,27 @@
 TOOLCHAIN_VERSION ?= 10.3-2021.07
 
 # Try to find the toolchain if not already specified
-ifeq ($(TOOLCHAIN_DIR),)
-    directory_exists = $(shell [ -d $(1) ] && echo "exists")
-    TOOLCHAIN_DIR := /opt/morse/gcc-arm-none-eabi-$(TOOLCHAIN_VERSION)
-    ifeq ($(call directory_exists,$(TOOLCHAIN_DIR)),)
-        TOOLCHAIN_DIR := /opt/gcc-arm-none-eabi-$(TOOLCHAIN_VERSION)
-        ifeq ($(call directory_exists,$(TOOLCHAIN_DIR)),)
-            $(error Unable to find arm-none-eabi-$(TOOLCHAIN_VERSION) toolchain)
-        endif
-    endif
-else
-	TOOLCHAIN_DIR := $(TOOLCHAIN_DIR)
-endif
+#ifeq ($(TOOLCHAIN_DIR),)
+#    directory_exists = $(shell [ -d $(1) ] && echo "exists")
+#    TOOLCHAIN_DIR := /opt/morse/gcc-arm-none-eabi-$(TOOLCHAIN_VERSION)
+#    ifeq ($(call directory_exists,$(TOOLCHAIN_DIR)),)
+#        TOOLCHAIN_DIR := /opt/gcc-arm-none-eabi-$(TOOLCHAIN_VERSION)
+#        ifeq ($(call directory_exists,$(TOOLCHAIN_DIR)),)
+#            $(error Unable to find arm-none-eabi-$(TOOLCHAIN_VERSION) toolchain)
+#        endif
+#   endif
+#else
+#	TOOLCHAIN_DIR := $(TOOLCHAIN_DIR)
+#endif
 
-TOOLCHAIN_BASE := $(TOOLCHAIN_DIR)/bin/arm-none-eabi-
+# --- MODIFICATION POUR WINDOWS / STM32CubeIDE ---
+# On ignore la recherche des dossiers Linux /opt/...
+# et on laisse le PATH système de STM32CubeIDE trouver le compilateur.
+TOOLCHAIN_DIR := 
+TOOLCHAIN_BASE := arm-none-eabi-
+
+
+#TOOLCHAIN_BASE := $(TOOLCHAIN_DIR)/bin/arm-none-eabi-
 
 CC := "$(TOOLCHAIN_BASE)gcc"
 CXX := "$(TOOLCHAIN_BASE)g++"
