@@ -113,6 +113,21 @@ void app_init(void)
 
     set_debug_state(DEBUG_STATE_CONNECTED);
 
+	/******************************************************************/
+	// ate = automated test equipement (fonction utiliser en interne pour tester des configs précise)
+	enum mmwlan_status override_status = mmwlan_ate_override_rate_control(
+	    MMWLAN_MCS_1,      // tx_rate_override
+	    MMWLAN_BW_NONE,    // bandwidth_override
+	    MMWLAN_GI_NONE     // gi_override
+	);
+
+	if (override_status == MMWLAN_SUCCESS) {
+	    printf("SUCCES : Le MCS = 1\n");
+	} else {
+	    printf("ERREUR : Impossible de forcer le MCS (Code: %d)\n", override_status);
+	}
+	/******************************************************************/
+
     /* Delay to allow communications to settle so we measure only idle current */
     mmosal_task_sleep(150);
 
