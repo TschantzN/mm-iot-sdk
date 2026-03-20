@@ -36,7 +36,7 @@
         /* The Wi-Fi security to use, valid values are sae, owe and open */
         "wlan.security": "sae"
         /* The 2 letter country code to ensure the correct regulatory domain is used */
-        // "wlan.country_code": "XX"
+        "wlan.country_code": "US"
 
         /* If true use DHCP, else the static IP configuration will be used */
         "ip.dhcp_enabled": "true"
@@ -163,8 +163,7 @@
          * `mf08551` with the appropriate value for the module that you have. For example,
          * if your module were MM6108-MF12345 then you would change the value of this key
          * to: $MMIOT_ROOT/morsefirmware/bcf_mf12345.mbin */
-        // "bcf_file": "$MMIOT_ROOT/morsefirmware/bcf_mf08551.mbin"
-
+		 "bcf_file": "$MMIOT_ROOT/morsefirmware/bcf_mf08651_us.mbin"
         
     }
 }
