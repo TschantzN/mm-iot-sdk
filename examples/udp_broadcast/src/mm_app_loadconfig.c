@@ -59,7 +59,7 @@
 /* Static Network configuration */
 #ifndef STATIC_LOCAL_IP
 /** Statically configured IP address (if ENABLE_DHCP is not set). */
-#define STATIC_LOCAL_IP "192.168.1.2"
+#define STATIC_LOCAL_IP "192.168.12.2"
 #endif
 #ifndef STATIC_GATEWAY
 /** Statically configured gateway address (if ENABLE_DHCP is not set). */

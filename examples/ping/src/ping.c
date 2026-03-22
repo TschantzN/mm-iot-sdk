@@ -33,15 +33,15 @@
 /* Ping configurations. */
 #ifndef PING_COUNT
 /** Number of ping requests to send. Set to 0 to continue indefinitely. */
-#define PING_COUNT 10
+#define PING_COUNT 1000
 #endif
 #ifndef PING_DATA_SIZE
 /** Size of the ping request data, excluding 8-byte ICMP header. */
-#define PING_DATA_SIZE 56
+#define PING_DATA_SIZE 1450
 #endif
 #ifndef PING_INTERVAL_MS
 /** Interval between successive ping requests. */
-#define PING_INTERVAL_MS 1000
+#define PING_INTERVAL_MS 50
 #endif
 #ifndef POST_PING_DELAY_MS
 /** Delay in ms to wait before terminating connection on completion of ping. */

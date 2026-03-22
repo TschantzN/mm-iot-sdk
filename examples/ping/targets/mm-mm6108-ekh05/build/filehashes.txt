@@ -1,12 +1,13 @@
 0x92aa040f ../../src/mm_app_common.c
  0x7a707a29 ../../src/mm_app_loadconfig.c
- 0x7991d527 ../../src/mm_app_regdb.c
  0x69ba9878 ../../src/ping.c
- 0x9f79a57c ../../../../framework/src/platforms/mm-mm6108-ekh05/bsp/Core/Src/main.c
- 0x2f4e4268 ../../../../framework/src/platforms/mm-mm6108-ekh05/bsp/Core/Src/stm32u5xx_hal_msp.c
- 0xc6c5e80f ../../../../framework/src/platforms/mm-mm6108-ekh05/bsp/Core/Src/stm32u5xx_hal_timebase_tim.c
- 0x04eb2319 ../../../../framework/src/platforms/mm-mm6108-ekh05/bsp/Core/Src/stm32u5xx_it.c
- 0x3c3a3988 ../../../../framework/src/platforms/mm-mm6108-ekh05/bsp/Core/Src/system_stm32u5xx.c
+ 0x316d61ad ../../../../framework/src/platforms/mm-mm8108-ekh05/bsp/Core/Src/main.c
+ 0x99c37d58 ../../../../framework/src/platforms/mm-mm8108-ekh05/bsp/Core/Src/stm32u5xx_hal_msp.c
+ 0x15aab450 ../../../../framework/src/platforms/mm-mm8108-ekh05/bsp/Core/Src/stm32u5xx_hal_timebase_tim.c
+ 0x34e20b19 ../../../../framework/src/platforms/mm-mm8108-ekh05/bsp/Core/Src/stm32u5xx_it.c
+ 0x5c1bf80e ../../../../framework/src/platforms/mm-mm8108-ekh05/bsp/Core/Src/system_stm32u5xx.c
+ 0x1187776c ../../../../framework/src/platforms/mm-mm8108-ekh05/bsp/Core/Src/ecp_alt.c
+ 0x1423eaf3 ../../../../framework/src/platforms/mm-mm8108-ekh05/bsp/Core/Src/ecp_curves_alt.c
  0x4c3140ab ../../../../framework/src/bsps/stm32cubeu5/Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal.c
  0xcd89b559 ../../../../framework/src/bsps/stm32cubeu5/Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_cortex.c
  0x09d07fd4 ../../../../framework/src/bsps/stm32cubeu5/Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_dma.c
@@ -38,16 +39,18 @@
  0x19fbc13b ../../../../framework/src/bsps/stm32cubeu5/Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_ll_spi.c
  0x6f26b5f4 ../../../../framework/src/bsps/stm32cubeu5/Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_ll_utils.c
  0xbdd460bf ../../../../framework/src/bsps/stm32cubeu5/Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_ll_lpuart.c
- 0xe7edb4a0 ../../../../framework/src/platforms/mm-mm6108-ekh05/mm_shims/mm_logging.c
- 0xb3fe4ed4 ../../../../framework/src/platforms/mm-mm6108-ekh05/mm_shims/mmhal.c
- 0x326db3f7 ../../../../framework/src/platforms/mm-mm6108-ekh05/mm_shims/mmhal_flash.c
- 0x8cb403d8 ../../../../framework/src/platforms/mm-mm6108-ekh05/mm_shims/mmhal_littlefs.c
- 0x6ba62026 ../../../../framework/src/platforms/mm-mm6108-ekh05/mm_shims/mmhal_uart.c
- 0x2d18463f ../../../../framework/src/platforms/mm-mm6108-ekh05/mm_shims/mmhal_wlan_binaries.c
- 0xd34ae5c5 ../../../../framework/src/platforms/mm-mm6108-ekh05/mm_shims/mmosal_shim_fileio.c
- 0x734e875d ../../../../framework/src/platforms/mm-mm6108-ekh05/mm_shims/wlan_hal.c
- 0xbae2d7bf ../../../../framework/src/platforms/mm-mm6108-ekh05/mm_shims/mmosal_shim_freertos.c
- 0x70a909c2 ../../../../framework/src/platforms/mm-mm6108-ekh05/mm_shims/mmosal_shim_libc_stubs.c
+ 0x088a8028 ../../../../framework/src/platforms/mm-mm8108-ekh05/mm_shims/mm_logging.c
+ 0xef6ae127 ../../../../framework/src/platforms/mm-mm8108-ekh05/mm_shims/mmhal_app.c
+ 0x193cbc5e ../../../../framework/src/platforms/mm-mm8108-ekh05/mm_shims/mmhal_core.c
+ 0x99e40f02 ../../../../framework/src/platforms/mm-mm8108-ekh05/mm_shims/mmhal_flash.c
+ 0x9a3e7662 ../../../../framework/src/platforms/mm-mm8108-ekh05/mm_shims/mmhal_littlefs.c
+ 0x1c2e7727 ../../../../framework/src/platforms/mm-mm8108-ekh05/mm_shims/mmhal_os.c
+ 0x165e60bd ../../../../framework/src/platforms/mm-mm8108-ekh05/mm_shims/mmhal_uart.c
+ 0x08ce5161 ../../../../framework/src/platforms/mm-mm8108-ekh05/mm_shims/mmhal_wlan.c
+ 0xae48d4ae ../../../../framework/src/platforms/mm-mm8108-ekh05/mm_shims/mmhal_wlan_binaries.c
+ 0xf7439bb6 ../../../../framework/src/platforms/mm-mm8108-ekh05/mm_shims/mmosal_shim_fileio.c
+ 0x3814ad1d ../../../../framework/src/platforms/mm-mm8108-ekh05/mm_shims/mmosal_shim_freertos.c
+ 0xdd1d8369 ../../../../framework/src/platforms/mm-mm8108-ekh05/mm_shims/mmosal_shim_libc_stubs.c
  0x8cba4e85 ../../../../framework/src/mmconfig/mmconfig.c
  0xace81ba2 ../../../../framework/src/slip/slip.c
  0x2379e946 ../../../../framework/src/mmutils/mmutils_wlan.c
@@ -66,6 +69,7 @@
  0x7c5fcacd ../../../../framework/src/freertos/mmiot/hooks.c
  0xe1f0d06f ../../../../framework/src/freertos/portable/GCC/ARM_CM33_NTZ/non_secure/port.c
  0x1bf90adc ../../../../framework/src/freertos/portable/GCC/ARM_CM33_NTZ/non_secure/portasm.c
+ 0xfacec782 ../../../../framework/src/hostap/crypto_mbedtls_mm.c
  0x77741ab1 ../../../../framework/src/mbedtls/library/aes.c
  0x3b2714a8 ../../../../framework/src/mbedtls/library/aria.c
  0x836e0ddf ../../../../framework/src/mbedtls/library/asn1parse.c
@@ -235,5 +239,6 @@
  0xd2492f36 ../../../../framework/src/lwip/src/core/tcp_out.c
  0x1176ee00 ../../../../framework/src/lwip/src/core/timeouts.c
  0xc3eac347 ../../../../framework/src/lwip/src/core/udp.c
+ 0x3f2c16d2 ../../../../framework/src/mmregdb/mmregdb.c
  0x82f3a47e ../../../../framework/src/mmping/mmping_lwip.c
 

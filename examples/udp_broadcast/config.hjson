@@ -5,7 +5,7 @@
  */
 
 /*
- * This is the config file for loading custom settings for the udp_broadcast application.
+ * This is the config file for loading custom settings for the ping application.
  * To load the settings on to a device, do the following from the `framework` directory:
  *
  *   - Ensure the MMIOT_ROOT environment variable is set to the path to the framework directory
@@ -22,34 +22,42 @@
  *     (Replace mm-ekh08-u575 with the actual name of your platform.)
  *
  *   - Now run the following command to load the keys to the device:
- *     `pipenv run ./tools/platform/program-configstore.py -H localhost -p mm-ekh08-u575 write-json ../examples/udp_broadcast/config.hjson`
+ *     `pipenv run ./tools/platform/program-configstore.py -H localhost -p mm-ekh08-u575 write-json ../examples/ping/config.hjson`
  *     (Replace mm-ekh08-u575 with the actual name of your platform.)
  */
 {
     /* You can specify a list of key/value strings in this section to write to config store
      * this is equivalent to the write-string command */
     "strings" : {
+    	//"wlan.operating_mode": "AP",
+    	"wlan.operating_mode": "STA",
         /* The Wi-Fi SSID */
-        "wlan.ssid": "MorseMicro"
+        "wlan.ssid": "MM8108_EKH19",
+        //"wlan.ssid": "",
         /* The Wi-Fi password, not required if wlan.security is open */
-        "wlan.password": "12345678"
+        //"wlan.password": "EKH19_PW",
+        //"wlan.password": "",
         /* The Wi-Fi security to use, valid values are sae, owe and open */
-        "wlan.security": "sae"
+        //"wlan.security": "sae",
+        "wlan.security": "open",
         /* The 2 letter country code to ensure the correct regulatory domain is used */
-        // "wlan.country_code": "XX"
+        "wlan.country_code": "US",
+        
+        "wlan.channel": "30",
 
         /* If true use DHCP, else the static IP configuration will be used */
-        "ip.dhcp_enabled": "true"
+        "ip.dhcp_enabled": "false"
 
         /* These settings are ignored if DHCP is used, but mandatory if using static IP */
-        // "ip.ip_addr": "192.168.1.2"
-        // "ip.netmask": "255.255.255.0"
-        // "ip.gateway": "192.168.1.1"
+		"ip.address": "192.168.12.50",
+		"ip.netmask": "255.255.255.0",
+		"ip.gateway": "192.168.12.255",
+		//"ip.gateway": "255.255.255.255",
 
         /* These settings are for IPv6, ip6.ip_addr is only required if ip6.autoconfig is
          * false */
-        "ip6.autoconfig": "true"
-        // "ip6.ip_addr": "FE80::2"
+        "ip6.autoconfig": "true",
+        // "ip6.ip_addr": "FE80::2",
 
         /* Note: The following settings should be used only when explicitly required */
         /* If specified, use this MAC address for the WLAN interface */
@@ -130,16 +138,17 @@
 
         /* The following settings are required only for the udp_broadcast app */
         /* Only used in "tx" mode. If set to zero packets will be sent forever. */
-        "udp_broadcast.packet_count": "10"
+        "udp_broadcast.packet_count": "10",
         /* Only used in "tx" mode */
-        "udp_broadcast.packet_interval_ms": "10000"
-        "udp_broadcast.port": "1337"
+        "udp_broadcast.packet_interval_ms": "1",
+        "udp_broadcast.port": "1337",
         /* The udp broadcast mode, valid values are "tx" or "rx" */
-        "udp_broadcast.mode": "tx"
+        "udp_broadcast.mode": "tx",
         /* Used in "rx" mode to specify the device’s index into the received data array
          * (see the documentation in udp_broadcast.c) */
         "udp_broadcast.id": "0"
 
+        
     },
     /* You can specify a list of key/value hex-strings in this section to write to config store
      * this is equivalent to the write-hex command */
@@ -168,8 +177,8 @@
          * labels, which take the form MM6108-MFxxxxx. Uncomment the line below and replace
          * `mf08551` with the appropriate value for the module that you have. For example,
          * if your module were MM6108-MF12345 then you would change the value of this key
-         * to: $MMIOT_ROOT/morsefirmware/mm6108/bcfs/bcf_mf12345.mbin */
-        // "bcf_file": "$MMIOT_ROOT/morsefirmware/mm6108/bcfs/bcf_mf08651_us.mbin"
+         * to: $MMIOT_ROOT/morsefirmware/bcf_mf12345.mbin */
+		 "bcf_file": "$MMIOT_ROOT/morsefirmware/mm8108/bcfs/bcf_mf15457.mbin"
 
         
     }

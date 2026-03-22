@@ -109,17 +109,19 @@
 #include "lwip/icmp.h"
 #include "lwip/tcpip.h"
 #include "lwip/udp.h"
+#include "lwip/netif.h"
+
 
 #include "mm_app_common.h"
 
 /* Application default configurations. */
 
 /** Number of broadcast packet to transmit */
-#define DEFAULT_BROADCAST_PACKET_COUNT 10
+#define DEFAULT_BROADCAST_PACKET_COUNT 100
 /** UDP port to bind too. */
 #define DEFAULT_UDP_PORT 1337
 /** Interval between successive packet transmission. */
-#define DEFAULT_PACKET_INTERVAL_MS 10000
+#define DEFAULT_PACKET_INTERVAL_MS 100
 /** Maximum length of broadcast tx packet payload */
 #define BROADCAST_PACKET_MAX_TX_PAYLOAD_LEN 35
 /** Format string to use for the tx packet payload */
@@ -171,6 +173,18 @@ struct udp_broadcast_rx_metadata
 
 /** Global data structure used in RX mode to record metadata. */
 static struct udp_broadcast_rx_metadata rx_metadata = { 0 };
+
+
+static volatile bool is_network_ready = false;
+
+/* Callback pour savoir quand la connexion est prete (~50ms) */
+static void link_status_callback(const struct mmipal_link_status *link_status)
+{
+    if (link_status->link_state == MMIPAL_LINK_UP) {
+        printf("\n>>> CONNECTE A OPENWRT ! Ligne UP. <<<\n");
+        is_network_ready = true;
+    }
+}
 
 /**
  * Callback function to handle received data from the UDP pcb.
@@ -262,41 +276,43 @@ static void udp_broadcast_rx_start(struct udp_pcb *pcb)
  */
 static void udp_broadcast_tx_start(struct udp_pcb *pcb)
 {
-    err_t err;
-    uint32_t count;
-    uint32_t packet_count = DEFAULT_BROADCAST_PACKET_COUNT;
-    uint32_t packet_interval_ms = DEFAULT_PACKET_INTERVAL_MS;
+    uint32_t count = 0;
 
-    /* Read out any params from configstore if they exist. If they don't the variables will retain
-     * their current values. */
-    mmconfig_read_uint32("udp_broadcast.packet_count", &packet_count);
-    mmconfig_read_uint32("udp_broadcast.packet_interval_ms", &packet_interval_ms);
+    // 10ms = 100 Tirs par seconde ! (Ideal pour stream video UDP)
+    //uint32_t packet_interval_ms = 10;
 
-    for (count = 0; (count < packet_count) || (packet_count == 0); count++)
-    {
-        printf("Sending Broadcast UDP packet no. %lu.\n", count);
+    ip_set_option(pcb, SOF_BROADCAST);
 
-        struct pbuf *p = pbuf_alloc(PBUF_TRANSPORT, BROADCAST_PACKET_MAX_TX_PAYLOAD_LEN, PBUF_RAM);
-        if (p == NULL)
+    // Cible Broadcast : C'est CA qui desactive les ACKs Wi-Fi !
+    ip_addr_t dest_ip;
+    IP4_ADDR(ip_2_ip4(&dest_ip), 192, 168, 12, 255);
+
+    while (1)
         {
-            printf("Failed to allocate pbuf for transmit\n");
-            break;
+            // On tire une rafale de 5 paquets (5 x 1400 = 7000 octets d'un coup !)
+            for (int i = 0; i < 10; i++) {
+                struct pbuf *p = pbuf_alloc(PBUF_TRANSPORT, 1400, PBUF_RAM);
+                if (p == NULL) {
+                    break; // Plus de mémoire temporaire, on arrête la rafale
+                }
+
+                snprintf((char *)p->payload, p->len, "BACHELOR VIDEO PAYLOAD %lu", count);
+
+                LOCK_TCPIP_CORE();
+                udp_sendto(pcb, p, &dest_ip, 1337);
+                UNLOCK_TCPIP_CORE();
+
+                pbuf_free(p);
+                count++;
+            }
+
+            if (count % 500 == 0) {
+                printf("Stream Video Haute Vitesse... (%lu frames expediees)\n", count);
+            }
+
+            // On dort le minimum absolu (1 tick) pour laisser la couche MAC travailler
+            mmosal_task_sleep(1);
         }
-        snprintf((char *)p->payload, p->len, BROADCAST_PACKET_TX_PAYLOAD_FMT, count);
-
-        LOCK_TCPIP_CORE();
-        err = udp_send(pcb, p);
-        if (err)
-        {
-            printf("Failed to send, err:%d.\n", err);
-            break;
-        }
-        UNLOCK_TCPIP_CORE();
-
-        pbuf_free(p);
-
-        mmosal_task_sleep(packet_interval_ms);
-    }
 }
 
 /**
@@ -309,39 +325,14 @@ static void udp_broadcast_tx_start(struct udp_pcb *pcb)
 static struct udp_pcb *init_udp_pcb(void)
 {
     struct udp_pcb *pcb = NULL;
-    err_t err;
-    uint32_t port_num = DEFAULT_UDP_PORT;
-
-    mmconfig_read_uint32("udp_broadcast.port", &port_num);
-    if (port_num > UINT16_MAX)
-    {
-        port_num = DEFAULT_UDP_PORT;
-        printf("Specified port number is too large. Falling back to %lu\n", port_num);
-    }
-
     LOCK_TCPIP_CORE();
     pcb = udp_new();
-
-    if (pcb == NULL)
-    {
-        printf("Error creating PCB.\n");
-        goto exit;
+    if (pcb != NULL) {
+        udp_bind(pcb, IP_ANY_TYPE, 1337);
     }
-
-    err = udp_bind(pcb, IP_ADDR_ANY, (uint16_t)port_num);
-    if (err)
-    {
-        printf("Failed to bind, err:%d.\n", err);
-        udp_remove(pcb);
-        pcb = NULL;
-        goto exit;
-    }
-
-exit:
     UNLOCK_TCPIP_CORE();
     return pcb;
 }
-
 /**
  * Get the mode from config store.
  *
@@ -377,36 +368,31 @@ static enum udp_broadcast_mode get_mode(void)
  */
 void app_init(void)
 {
-    struct udp_pcb *pcb;
-    enum udp_broadcast_mode mode;
+    printf("\n\n--- BroadCastclassic  (Built " __DATE__ " " __TIME__ ") ---\n\n");
 
-    printf("\n\nMorse UDP broadcast Demo (Built " __DATE__ " " __TIME__ ")\n\n");
-
-    /* Initialize and connect to Wi-Fi, blocks till connected */
     app_wlan_init();
+
+    /* On ecoute l'etat du reseau */
+    mmipal_set_link_status_callback(link_status_callback);
+
+    printf("Connexion a l'AP OpenWrt en cours...\n");
     app_wlan_start();
 
-    pcb = init_udp_pcb();
-    if (pcb == NULL)
-    {
-        return;
+    mmwlan_ate_override_rate_control(MMWLAN_MCS_2, MMWLAN_BW_2MHZ, MMWLAN_GI_NONE);
+    printf("forcage OK : 2 MHz / MCS 2 force.\n");
+
+    /* On attend poliment que la connexion soit etablie (Fini le Failure 15 !) */
+    while (!is_network_ready) {
+        mmosal_task_sleep(10);
     }
 
-    mode = get_mode();
-    if (mode == TX_MODE)
-    {
+    /* Le feu est vert, on lache le torrent de donnees */
+    struct udp_pcb *pcb = init_udp_pcb();
+    if (pcb != NULL) {
         udp_broadcast_tx_start(pcb);
+    }
 
-        /* Since we have broadcast all the packets we're going to send lets clean up. */
-        LOCK_TCPIP_CORE();
-        udp_remove(pcb);
-        UNLOCK_TCPIP_CORE();
-        app_wlan_stop();
-    }
-    else
-    {
-        /* Since this registers a callback we leave the WLAN interface up and just allow this
-         * app_init thread to be cleaned up. */
-        udp_broadcast_rx_start(pcb);
-    }
+    /* Hack pour le compilateur */
+    (void)get_mode;
+    (void)udp_broadcast_rx_start;
 }

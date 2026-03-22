@@ -7,14 +7,9 @@ build/src/platforms/mm-mm6108-ekh05/mm_shims/mmhal_flash.o: \
  ../../../../framework/src/bsps/stm32cubeu5/Drivers/CMSIS/Include/cmsis_gcc.h \
  ../../../../framework/src/bsps/stm32cubeu5/Drivers/CMSIS/Include/mpu_armv8.h \
  ../../../../framework/src/bsps/stm32cubeu5/Drivers/CMSIS/Device/ST/STM32U5xx/Include/system_stm32u5xx.h \
- ../../../../framework/src/platforms/mm-mm6108-ekh05/mm_shims/mm_hal_common.h \
- ../../../../framework/morselib/include/mmhal.h \
  ../../../../framework/morselib/include/mmhal_flash.h \
- ../../../../framework/morselib/include/mmhal_wlan.h \
- ../../../../framework/morselib/include/mmpkt.h \
  ../../../../framework/morselib/include/mmosal.h \
  ../../../../framework/src/platforms/mm-mm6108-ekh05/mm_shims/mmport.h \
- ../../../../framework/morselib/include/mmwlan.h \
  ../../../../framework/src/platforms/mm-mm6108-ekh05/bsp/Core/Inc/main.h \
  ../../../../framework/src/bsps/stm32cubeu5/Drivers/STM32U5xx_HAL_Driver/Inc/stm32u5xx_hal.h \
  ../../../../framework/src/platforms/mm-mm6108-ekh05/bsp/Core/Inc/stm32u5xx_hal_conf.h \
@@ -61,14 +56,9 @@ build/src/platforms/mm-mm6108-ekh05/mm_shims/mmhal_flash.o: \
 ../../../../framework/src/bsps/stm32cubeu5/Drivers/CMSIS/Include/cmsis_gcc.h:
 ../../../../framework/src/bsps/stm32cubeu5/Drivers/CMSIS/Include/mpu_armv8.h:
 ../../../../framework/src/bsps/stm32cubeu5/Drivers/CMSIS/Device/ST/STM32U5xx/Include/system_stm32u5xx.h:
-../../../../framework/src/platforms/mm-mm6108-ekh05/mm_shims/mm_hal_common.h:
-../../../../framework/morselib/include/mmhal.h:
 ../../../../framework/morselib/include/mmhal_flash.h:
-../../../../framework/morselib/include/mmhal_wlan.h:
-../../../../framework/morselib/include/mmpkt.h:
 ../../../../framework/morselib/include/mmosal.h:
 ../../../../framework/src/platforms/mm-mm6108-ekh05/mm_shims/mmport.h:
-../../../../framework/morselib/include/mmwlan.h:
 ../../../../framework/src/platforms/mm-mm6108-ekh05/bsp/Core/Inc/main.h:
 ../../../../framework/src/bsps/stm32cubeu5/Drivers/STM32U5xx_HAL_Driver/Inc/stm32u5xx_hal.h:
 ../../../../framework/src/platforms/mm-mm6108-ekh05/bsp/Core/Inc/stm32u5xx_hal_conf.h:

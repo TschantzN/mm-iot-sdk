@@ -1,0 +1,157 @@
+/*
+ * Copyright 2021-2023 Morse Micro
+ *
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+/**
+ * @file
+ * @brief Simple ping demonstration.
+ *
+ * @note It is assumed that you have followed the steps in the @ref GETTING_STARTED guide and are
+ * therefore familiar with how to build, flash, and monitor an application using the MM-IoT-SDK
+ * framework.
+ *
+ * This file demonstrates how to ping a target using the Morse Micro WLAN API.
+ *
+ * See @ref APP_COMMON_API for details of WLAN and IP stack configuration. Additional
+ * configuration options for this application can be found in the config.hjson file.
+ */
+
+#include <string.h>
+#include "mmhal_app.h"
+#include "mmosal.h"
+#include "mmwlan.h"
+#include "mmconfig.h"
+#include "mmping.h"
+#include "mmutils.h"
+
+#include "mmipal.h"
+
+#include "mm_app_common.h"
+
+/* Ping configurations. */
+#ifndef PING_COUNT
+/** Number of ping requests to send. Set to 0 to continue indefinitely. */
+#define PING_COUNT 1000
+#endif
+#ifndef PING_DATA_SIZE
+/** Size of the ping request data, excluding 8-byte ICMP header. */
+#define PING_DATA_SIZE 1450
+#endif
+#ifndef PING_INTERVAL_MS
+/** Interval between successive ping requests. */
+#define PING_INTERVAL_MS 50
+#endif
+#ifndef POST_PING_DELAY_MS
+/** Delay in ms to wait before terminating connection on completion of ping. */
+#define POST_PING_DELAY_MS 10000
+#endif
+#ifndef UPDATE_INTERVAL_MS
+/** Interval (in milliseconds) at which to provide updates when the receive count has not
+ *  changed. */
+#define UPDATE_INTERVAL_MS (5000)
+#endif
+
+#if defined(ENABLE_PWR_MEAS) && ENABLE_PWR_MEAS
+/** Enable delays between states for accurate power consumption measurements. */
+#define PWR_MEAS_DELAY_MS(delay_ms) mmosal_task_sleep(delay_ms)
+/** Set GPIO debug pins on state change to track states. */
+#define SET_DEBUG_STATE(state) mmhal_set_debug_pins(MMHAL_ALL_DEBUG_PINS, state);
+#else
+/** Disable delays which are only useful for power consumption accuracy. */
+#define PWR_MEAS_DELAY_MS(delay_ms) MM_UNUSED(delay_ms)
+/** Disable GPIO writing if not measuring power consumption. */
+#define SET_DEBUG_STATE(state)      MM_UNUSED(state)
+#endif
+
+/**
+ * Enumeration of debug states that will be reflected on debug pins. Note that due to limited
+ * availability of pins, the values are mapped to 2-bit codes and so are not unique. The code
+ * sequence has been chosen to be gray code like in that only one bit changes at a time, but
+ * it does not return to zero so a zero code can be used to identify the first state.
+ */
+enum debug_state
+{
+    /** Initial state at startup. */
+    DEBUG_STATE_INIT = 0x00,
+    /** Indicates that we are booting the MM chip (note that this will also include the
+     *  host MCU startup time. */
+    DEBUG_STATE_BOOTING_CHIP = 0x01,
+    /** Indicates we are connecting to the AP. */
+    DEBUG_STATE_CONNECTING = 0x03,
+    /** Indicates we are connected to the AP. */
+    DEBUG_STATE_CONNECTED = 0x02,
+    /** Indicates that we have connected to the AP, but have not started the ping yet. */
+    DEBUG_STATE_CONNECTED_IDLE = 0x00,
+    /** Indicates that the ping is in progress. */
+    DEBUG_STATE_PINGING = 0x02,
+    /** Indicates that the ping has completed. */
+    DEBUG_STATE_PING_DONE = 0x03,
+    /** Indicates that we are idling with WLAN still on. */
+    DEBUG_STATE_IDLE = 0x01,
+    /** Indicates that we are disconnecting from the AP. */
+    DEBUG_STATE_TERMINATING = 0x00,
+};
+
+/**
+ * Main entry point to the application. This will be invoked in a thread once operating system
+ * and hardware initialization has completed. It may return, but it does not have to.
+ */
+void app_init(void)
+{
+    printf("\n\n--- RAW TX DEMO ---\n\n");
+
+    /* 1. Initialisation de bas niveau (sans LwIP ni réseau) */
+    mmwlan_init();
+
+    /* 2. On allume l'antenne */
+    mmwlan_set_state(MMWLAN_STATE_UP);
+
+    /* 3. On se cale sur le même canal que l'EKH19 (ex: 29 = 916.5 MHz) */
+    mmwlan_set_channel(29);
+
+    /* --- INSEREZ VOTRE CODE DE FORCAGE MCS ICI --- */
+	enum mmwlan_status override_status = mmwlan_ate_override_rate_control(
+	    MMWLAN_MCS_1,      // tx_rate_override
+	    MMWLAN_BW_NONE,    // bandwidth_override
+	    MMWLAN_GI_NONE     // gi_override
+	);
+
+	if (override_status == MMWLAN_SUCCESS) {
+	    printf("SUCCES : mmwlan_ate_override_rate_control\n");
+	} else {
+	    printf("FAILED : mmwlan_ate_override_rate_control (Code: %d)\n", override_status);
+	}
+
+    printf("Configuration succeeded !\n");
+
+    /* 4. Construction d'une trame 802.11 MAC brute */
+    uint8_t raw_frame[] = {
+        0x08, 0x00, 0x00, 0x00,             // Frame Control (Packet Data)
+        0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, // Destination MAC (Broadcast absolu)
+        0x0C, 0xBF, 0x74, 0x00, 0x43, 0x31, // Source MAC (Votre EKH05)
+        0x0C, 0xBF, 0x74, 0x00, 0x43, 0x31, // BSSID (On met la meme chose)
+        0x00, 0x00,                         // Sequence Control
+        'P', 'A', 'Y', 'L', 'O', 'A', 'D', ' ', 'T', 'E', 'S', 'T' // Payload !
+    };
+
+    printf("sanding raw frames...\n");
+
+    /* 5. Boucle infinie d'injection */
+    uint32_t counter = 0;
+    while (1)
+    {
+        /* Envoi de la trame brute directement dans l'air */
+        enum mmwlan_status status = mmwlan_tx_raw_frame(raw_frame, sizeof(raw_frame), 0);
+
+        if (status == MMWLAN_SUCCESS) {
+            printf("Trame %lu envoyee avec succes\n", ++counter);
+        } else {
+            printf("Erreur TX: %d\n", status);
+        }
+
+        /* Pause de 100ms (10 paquets par seconde) */
+        mmosal_task_sleep(100);
+    }
+}

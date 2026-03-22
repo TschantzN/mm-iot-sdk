@@ -24,6 +24,9 @@
 #include "mm_app_loadconfig.h"
 #include "mm_app_common.h"
 
+#include "lwip/netif.h"
+#include "lwip/tcpip.h"
+
 /** Maximum number of DNS servers to attempt to retrieve from config store. */
 #ifndef DNS_MAX_SERVERS
 #define DNS_MAX_SERVERS 2
@@ -223,6 +226,38 @@ void app_wlan_init(void)
     }
 
     mmipal_set_link_status_callback(link_status_callback);
+}
+
+void app_wlan_start_test(void)
+{
+   // enum mmwlan_status status;
+
+        printf("\n*** HACK : ACCESS POINT ***\n");
+
+        struct mmwlan_sta_args sta_args = MMWLAN_STA_ARGS_INIT;
+            load_mmwlan_sta_args(&sta_args);
+            load_mmwlan_settings();
+
+            /* 2. On lance l'activation (indispensable pour réveiller la puce) */
+            mmwlan_sta_enable(&sta_args, sta_status_callback);
+
+            /* 3. LE MENSONGE : On dit au driver d'arrêter de chercher
+               et on force l'état CONNECTED partout. */
+            mmosal_task_sleep(500); // On laisse 500ms à la puce pour s'allumer
+
+            // On force la libération du sémaphore pour que le code continue
+            mmosal_semb_give(link_established);
+
+            // On force l'état dans le callback officiel du SDK
+            // (Utilisez l'énumération exacte qui a compilé tout à l'heure)
+            sta_status_callback((enum mmwlan_sta_state)MMWLAN_LINK_UP);
+
+            /* 4. Le Hack Ninja pour LwIP (pour éviter l'erreur -4) */
+            extern struct netif *netif_list;
+            if (netif_list != NULL) {
+                netif_list->flags |= NETIF_FLAG_UP | NETIF_FLAG_LINK_UP | NETIF_FLAG_BROADCAST;
+            }
+        printf("ACCESS POINT ready sending UDP...\n");
 }
 
 void app_wlan_start(void)

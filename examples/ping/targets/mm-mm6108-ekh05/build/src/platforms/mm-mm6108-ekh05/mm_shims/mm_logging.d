@@ -10,11 +10,8 @@ build/src/platforms/mm-mm6108-ekh05/mm_shims/mm_logging.o: \
  ../../../../framework/morselib/include/mmlog.h \
  ../../../../framework/morselib/include/mmosal.h \
  ../../../../framework/src/platforms/mm-mm6108-ekh05/mm_shims/mmport.h \
- ../../../../framework/morselib/include/mmhal.h \
- ../../../../framework/morselib/include/mmhal_flash.h \
- ../../../../framework/morselib/include/mmhal_wlan.h \
- ../../../../framework/morselib/include/mmpkt.h \
- ../../../../framework/morselib/include/mmwlan.h \
+ ../../../../framework/morselib/include/mmhal_os.h \
+ ../../../../framework/morselib/include/mmhal_app.h \
  ../../../../framework/src/mmutils/mmutils.h
 ../../../../framework/src/bsps/stm32cubeu5/Drivers/CMSIS/Device/ST/STM32U5xx/Include/stm32u585xx.h:
 ../../../../framework/src/bsps/stm32cubeu5/Drivers/CMSIS/Include/core_cm33.h:
@@ -26,9 +23,6 @@ build/src/platforms/mm-mm6108-ekh05/mm_shims/mm_logging.o: \
 ../../../../framework/morselib/include/mmlog.h:
 ../../../../framework/morselib/include/mmosal.h:
 ../../../../framework/src/platforms/mm-mm6108-ekh05/mm_shims/mmport.h:
-../../../../framework/morselib/include/mmhal.h:
-../../../../framework/morselib/include/mmhal_flash.h:
-../../../../framework/morselib/include/mmhal_wlan.h:
-../../../../framework/morselib/include/mmpkt.h:
-../../../../framework/morselib/include/mmwlan.h:
+../../../../framework/morselib/include/mmhal_os.h:
+../../../../framework/morselib/include/mmhal_app.h:
 ../../../../framework/src/mmutils/mmutils.h:

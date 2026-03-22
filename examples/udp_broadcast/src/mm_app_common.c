@@ -193,8 +193,8 @@ void app_print_version_info(void)
 void app_wlan_init(void)
 {
     /* Ensure we don't call twice */
-    MMOSAL_ASSERT(link_established == NULL);
-    link_established = mmosal_semb_create("link_established");
+    //MMOSAL_ASSERT(link_established == NULL);
+    //link_established = mmosal_semb_create("link_established");
 
     /* Initialize mbedTLS threading (required if MBEDTLS_THREADING_ALT is defined) */
 #ifdef MBEDTLS_THREADING_ALT
@@ -248,7 +248,7 @@ void app_wlan_start(void)
     /* Wait for link status callback.
      * Use a binary semaphore to block us until Link is up.
      */
-    mmosal_semb_wait(link_established, UINT32_MAX);
+    //mmosal_semb_wait(link_established, UINT32_MAX);
 
     /* Wi-Fi link is now established, return to caller */
 }

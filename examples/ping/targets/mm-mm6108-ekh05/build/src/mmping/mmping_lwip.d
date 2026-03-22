@@ -11,14 +11,12 @@ build/src/mmping/mmping_lwip.o: \
  ../../../../framework/src/lwip/src/include/lwip/opt.h \
  ../../../../framework/src/lwip/port/lwipopts.h \
  ../../../../framework/morselib/include/mmosal.h \
- ../../../../framework/src/platforms/mm-mm6108-ekh05/mm_shims/mmport.h \
- ../../../../framework/morselib/include/mmhal.h \
- ../../../../framework/morselib/include/mmhal_flash.h \
- ../../../../framework/morselib/include/mmhal_wlan.h \
- ../../../../framework/morselib/include/mmpkt.h \
- ../../../../framework/morselib/include/mmwlan.h \
+ ../../../../framework/src/platforms/mm-mm8108-ekh05/mm_shims/mmport.h \
+ ../../../../framework/morselib/include/mmhal_core.h \
  ../../../../framework/src/mmipal/mmipal.h \
  ../../../../framework/src/lwip/port/arch/sys_arch.h \
+ ../../../../framework/morselib/include/mmhal_app.h \
+ ../../../../framework/morselib/include/mmhal_os.h \
  ../../../../framework/src/lwip/src/include/lwip/debug.h \
  ../../../../framework/src/lwip/src/include/lwip/arch.h \
  ../../../../framework/src/lwip/port/arch/cc.h \
@@ -31,7 +29,6 @@ build/src/mmping/mmping_lwip.o: \
  ../../../../framework/src/lwip/src/include/lwip/ip4_addr.h \
  ../../../../framework/src/lwip/src/include/lwip/ip6_addr.h \
  ../../../../framework/src/lwip/src/include/lwip/def.h \
- ../../../../framework/src/lwip/src/include/lwip/ip6_zone.h \
  ../../../../framework/src/lwip/src/include/lwip/netif.h \
  ../../../../framework/src/lwip/src/include/lwip/stats.h \
  ../../../../framework/src/lwip/src/include/lwip/memp.h \
@@ -41,15 +38,13 @@ build/src/mmping/mmping_lwip.o: \
  ../../../../framework/src/lwip/src/include/lwip/ip4.h \
  ../../../../framework/src/lwip/src/include/lwip/prot/ip4.h \
  ../../../../framework/src/lwip/src/include/lwip/ip6.h \
- ../../../../framework/src/lwip/src/include/lwip/prot/ip6.h \
  ../../../../framework/src/lwip/src/include/lwip/prot/ip.h \
  ../../../../framework/src/lwip/src/include/lwip/icmp.h \
  ../../../../framework/src/lwip/src/include/lwip/prot/icmp.h \
- ../../../../framework/src/lwip/src/include/lwip/icmp6.h \
- ../../../../framework/src/lwip/src/include/lwip/prot/icmp6.h \
  ../../../../framework/src/lwip/src/include/lwip/sys.h \
  ../../../../framework/src/lwip/src/include/lwip/timeouts.h \
  ../../../../framework/src/lwip/src/include/lwip/inet_chksum.h \
+ ../../../../framework/src/lwip/src/include/lwip/prot/icmp6.h \
  ../../../../framework/src/lwip/src/include/lwip/inet.h \
  ../../../../framework/src/mmping/mmping.h \
  ../../../../framework/src/mmutils/mmutils.h \
@@ -65,14 +60,12 @@ build/src/mmping/mmping_lwip.o: \
 ../../../../framework/src/lwip/src/include/lwip/opt.h:
 ../../../../framework/src/lwip/port/lwipopts.h:
 ../../../../framework/morselib/include/mmosal.h:
-../../../../framework/src/platforms/mm-mm6108-ekh05/mm_shims/mmport.h:
-../../../../framework/morselib/include/mmhal.h:
-../../../../framework/morselib/include/mmhal_flash.h:
-../../../../framework/morselib/include/mmhal_wlan.h:
-../../../../framework/morselib/include/mmpkt.h:
-../../../../framework/morselib/include/mmwlan.h:
+../../../../framework/src/platforms/mm-mm8108-ekh05/mm_shims/mmport.h:
+../../../../framework/morselib/include/mmhal_core.h:
 ../../../../framework/src/mmipal/mmipal.h:
 ../../../../framework/src/lwip/port/arch/sys_arch.h:
+../../../../framework/morselib/include/mmhal_app.h:
+../../../../framework/morselib/include/mmhal_os.h:
 ../../../../framework/src/lwip/src/include/lwip/debug.h:
 ../../../../framework/src/lwip/src/include/lwip/arch.h:
 ../../../../framework/src/lwip/port/arch/cc.h:
@@ -85,7 +78,6 @@ build/src/mmping/mmping_lwip.o: \
 ../../../../framework/src/lwip/src/include/lwip/ip4_addr.h:
 ../../../../framework/src/lwip/src/include/lwip/ip6_addr.h:
 ../../../../framework/src/lwip/src/include/lwip/def.h:
-../../../../framework/src/lwip/src/include/lwip/ip6_zone.h:
 ../../../../framework/src/lwip/src/include/lwip/netif.h:
 ../../../../framework/src/lwip/src/include/lwip/stats.h:
 ../../../../framework/src/lwip/src/include/lwip/memp.h:
@@ -95,15 +87,13 @@ build/src/mmping/mmping_lwip.o: \
 ../../../../framework/src/lwip/src/include/lwip/ip4.h:
 ../../../../framework/src/lwip/src/include/lwip/prot/ip4.h:
 ../../../../framework/src/lwip/src/include/lwip/ip6.h:
-../../../../framework/src/lwip/src/include/lwip/prot/ip6.h:
 ../../../../framework/src/lwip/src/include/lwip/prot/ip.h:
 ../../../../framework/src/lwip/src/include/lwip/icmp.h:
 ../../../../framework/src/lwip/src/include/lwip/prot/icmp.h:
-../../../../framework/src/lwip/src/include/lwip/icmp6.h:
-../../../../framework/src/lwip/src/include/lwip/prot/icmp6.h:
 ../../../../framework/src/lwip/src/include/lwip/sys.h:
 ../../../../framework/src/lwip/src/include/lwip/timeouts.h:
 ../../../../framework/src/lwip/src/include/lwip/inet_chksum.h:
+../../../../framework/src/lwip/src/include/lwip/prot/icmp6.h:
 ../../../../framework/src/lwip/src/include/lwip/inet.h:
 ../../../../framework/src/mmping/mmping.h:
 ../../../../framework/src/mmutils/mmutils.h:
