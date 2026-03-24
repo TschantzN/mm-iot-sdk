@@ -177,11 +177,11 @@ static struct udp_broadcast_rx_metadata rx_metadata = { 0 };
 
 static volatile bool is_network_ready = false;
 
-/* Callback pour savoir quand la connexion est prete (~50ms) */
+/* Callback pour savoir quand la connexion est prete*/
 static void link_status_callback(const struct mmipal_link_status *link_status)
 {
     if (link_status->link_state == MMIPAL_LINK_UP) {
-        printf("\n>>> CONNECTE A OPENWRT ! Ligne UP. <<<\n");
+        printf("\n>>> CONNECTE A OPENWRT <<<\n");
         is_network_ready = true;
     }
 }
@@ -277,42 +277,50 @@ static void udp_broadcast_rx_start(struct udp_pcb *pcb)
 static void udp_broadcast_tx_start(struct udp_pcb *pcb)
 {
     uint32_t count = 0;
-
-    // 10ms = 100 Tirs par seconde ! (Ideal pour stream video UDP)
-    //uint32_t packet_interval_ms = 10;
+    err_t err;
 
     ip_set_option(pcb, SOF_BROADCAST);
-
-    // Cible Broadcast : C'est CA qui desactive les ACKs Wi-Fi !
     ip_addr_t dest_ip;
     IP4_ADDR(ip_2_ip4(&dest_ip), 192, 168, 12, 255);
 
+    static uint8_t dummy_file_chunk[1400];
+
+    memset(dummy_file_chunk, 0x41, sizeof(dummy_file_chunk));
+
+    printf("Demarrage du Stress Test UDP Haute Vitesse...\n");
+
     while (1)
         {
-            // On tire une rafale de 5 paquets (5 x 1400 = 7000 octets d'un coup !)
-            for (int i = 0; i < 10; i++) {
-                struct pbuf *p = pbuf_alloc(PBUF_TRANSPORT, 1400, PBUF_RAM);
-                if (p == NULL) {
-                    break; // Plus de mémoire temporaire, on arrête la rafale
-                }
+            struct pbuf *p = pbuf_alloc(PBUF_TRANSPORT, 1400, PBUF_RAM);
 
-                snprintf((char *)p->payload, p->len, "BACHELOR VIDEO PAYLOAD %lu", count);
-
-                LOCK_TCPIP_CORE();
-                udp_sendto(pcb, p, &dest_ip, 1337);
-                UNLOCK_TCPIP_CORE();
-
-                pbuf_free(p);
-                count++;
+            if (p == NULL) {
+                // Le Heap est plein
+                // On fait une pause d'un cycle système pour la laisser expédier
+                mmosal_task_sleep(1);
+                continue;
             }
 
-            if (count % 500 == 0) {
-                printf("Stream Video Haute Vitesse... (%lu frames expediees)\n", count);
+            memcpy(p->payload, dummy_file_chunk, 1400);
+
+            LOCK_TCPIP_CORE();
+            err = udp_sendto(pcb, p, &dest_ip, 1337);
+            UNLOCK_TCPIP_CORE();
+
+            pbuf_free(p);
+
+            if (err != ERR_OK) {
+                mmosal_task_sleep(1);
+                continue;
             }
 
-            // On dort le minimum absolu (1 tick) pour laisser la couche MAC travailler
-            mmosal_task_sleep(1);
+            count++;
+
+            if (count % 1000 == 0) {
+                printf("Stress Test : %lu frames expediees\n", count);
+            }
         }
+
+        mmosal_task_sleep(1);
 }
 
 /**
@@ -368,11 +376,10 @@ static enum udp_broadcast_mode get_mode(void)
  */
 void app_init(void)
 {
-    printf("\n\n--- BroadCastclassic  (Built " __DATE__ " " __TIME__ ") ---\n\n");
+    printf("\n\n--- Broadcast  (Built " __DATE__ " " __TIME__ ") ---\n\n");
 
     app_wlan_init();
 
-    /* On ecoute l'etat du reseau */
     mmipal_set_link_status_callback(link_status_callback);
 
     printf("Connexion a l'AP OpenWrt en cours...\n");
@@ -381,18 +388,15 @@ void app_init(void)
     mmwlan_ate_override_rate_control(MMWLAN_MCS_2, MMWLAN_BW_2MHZ, MMWLAN_GI_NONE);
     printf("forcage OK : 2 MHz / MCS 2 force.\n");
 
-    /* On attend poliment que la connexion soit etablie (Fini le Failure 15 !) */
     while (!is_network_ready) {
         mmosal_task_sleep(10);
     }
 
-    /* Le feu est vert, on lache le torrent de donnees */
     struct udp_pcb *pcb = init_udp_pcb();
     if (pcb != NULL) {
         udp_broadcast_tx_start(pcb);
     }
 
-    /* Hack pour le compilateur */
     (void)get_mode;
     (void)udp_broadcast_rx_start;
 }
