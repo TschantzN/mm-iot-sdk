@@ -1,0 +1,114 @@
+build/src/lwip/src/api/api_msg.o: \
+ ../../../../framework/src/lwip/src/api/api_msg.c \
+ ../../../../framework/src/bsps/stm32cubeu5/Drivers/CMSIS/Device/ST/STM32U5xx/Include/stm32u585xx.h \
+ ../../../../framework/src/bsps/stm32cubeu5/Drivers/CMSIS/Include/core_cm33.h \
+ ../../../../framework/src/bsps/stm32cubeu5/Drivers/CMSIS/Include/cmsis_version.h \
+ ../../../../framework/src/bsps/stm32cubeu5/Drivers/CMSIS/Include/cmsis_compiler.h \
+ ../../../../framework/src/bsps/stm32cubeu5/Drivers/CMSIS/Include/cmsis_gcc.h \
+ ../../../../framework/src/bsps/stm32cubeu5/Drivers/CMSIS/Include/mpu_armv8.h \
+ ../../../../framework/src/bsps/stm32cubeu5/Drivers/CMSIS/Device/ST/STM32U5xx/Include/system_stm32u5xx.h \
+ ../../../../framework/src/lwip/src/include/lwip/opt.h \
+ ../../../../framework/src/lwip/port/lwipopts.h \
+ ../../../../framework/morselib/include/mmosal.h \
+ ../../../../framework/src/platforms/mm-mm8108-ekh05/mm_shims/mmport.h \
+ ../../../../framework/morselib/include/mmhal_core.h \
+ ../../../../framework/src/mmipal/mmipal.h \
+ ../../../../framework/src/lwip/port/arch/sys_arch.h \
+ ../../../../framework/morselib/include/mmhal_app.h \
+ ../../../../framework/morselib/include/mmhal_os.h \
+ ../../../../framework/src/lwip/src/include/lwip/debug.h \
+ ../../../../framework/src/lwip/src/include/lwip/arch.h \
+ ../../../../framework/src/lwip/port/arch/cc.h \
+ ../../../../framework/src/lwip/src/include/morse/on_demand_timers.h \
+ ../../../../framework/src/lwip/src/include/lwip/priv/api_msg.h \
+ ../../../../framework/src/lwip/src/include/lwip/ip_addr.h \
+ ../../../../framework/src/lwip/src/include/lwip/def.h \
+ ../../../../framework/src/lwip/src/include/lwip/ip4_addr.h \
+ ../../../../framework/src/lwip/src/include/lwip/ip6_addr.h \
+ ../../../../framework/src/lwip/src/include/lwip/def.h \
+ ../../../../framework/src/lwip/src/include/lwip/err.h \
+ ../../../../framework/src/lwip/src/include/lwip/sys.h \
+ ../../../../framework/src/lwip/src/include/lwip/igmp.h \
+ ../../../../framework/src/lwip/src/include/lwip/netif.h \
+ ../../../../framework/src/lwip/src/include/lwip/pbuf.h \
+ ../../../../framework/src/lwip/src/include/lwip/stats.h \
+ ../../../../framework/src/lwip/src/include/lwip/mem.h \
+ ../../../../framework/src/lwip/src/include/lwip/memp.h \
+ ../../../../framework/src/lwip/src/include/lwip/priv/memp_std.h \
+ ../../../../framework/src/lwip/src/include/lwip/priv/memp_priv.h \
+ ../../../../framework/src/lwip/src/include/lwip/priv/mem_priv.h \
+ ../../../../framework/src/lwip/src/include/lwip/api.h \
+ ../../../../framework/src/lwip/src/include/lwip/netbuf.h \
+ ../../../../framework/src/lwip/src/include/lwip/priv/tcpip_priv.h \
+ ../../../../framework/src/lwip/src/include/lwip/tcpip.h \
+ ../../../../framework/src/lwip/src/include/lwip/timeouts.h \
+ ../../../../framework/src/lwip/src/include/lwip/ip.h \
+ ../../../../framework/src/lwip/src/include/lwip/ip4.h \
+ ../../../../framework/src/lwip/src/include/lwip/prot/ip4.h \
+ ../../../../framework/src/lwip/src/include/lwip/ip6.h \
+ ../../../../framework/src/lwip/src/include/lwip/prot/ip.h \
+ ../../../../framework/src/lwip/src/include/lwip/udp.h \
+ ../../../../framework/src/lwip/src/include/lwip/prot/udp.h \
+ ../../../../framework/src/lwip/src/include/lwip/tcp.h \
+ ../../../../framework/src/lwip/src/include/lwip/tcpbase.h \
+ ../../../../framework/src/lwip/src/include/lwip/icmp.h \
+ ../../../../framework/src/lwip/src/include/lwip/prot/icmp.h \
+ ../../../../framework/src/lwip/src/include/lwip/raw.h \
+ ../../../../framework/src/lwip/src/include/lwip/dns.h \
+ ../../../../framework/src/lwip/src/include/lwip/mld6.h
+../../../../framework/src/bsps/stm32cubeu5/Drivers/CMSIS/Device/ST/STM32U5xx/Include/stm32u585xx.h:
+../../../../framework/src/bsps/stm32cubeu5/Drivers/CMSIS/Include/core_cm33.h:
+../../../../framework/src/bsps/stm32cubeu5/Drivers/CMSIS/Include/cmsis_version.h:
+../../../../framework/src/bsps/stm32cubeu5/Drivers/CMSIS/Include/cmsis_compiler.h:
+../../../../framework/src/bsps/stm32cubeu5/Drivers/CMSIS/Include/cmsis_gcc.h:
+../../../../framework/src/bsps/stm32cubeu5/Drivers/CMSIS/Include/mpu_armv8.h:
+../../../../framework/src/bsps/stm32cubeu5/Drivers/CMSIS/Device/ST/STM32U5xx/Include/system_stm32u5xx.h:
+../../../../framework/src/lwip/src/include/lwip/opt.h:
+../../../../framework/src/lwip/port/lwipopts.h:
+../../../../framework/morselib/include/mmosal.h:
+../../../../framework/src/platforms/mm-mm8108-ekh05/mm_shims/mmport.h:
+../../../../framework/morselib/include/mmhal_core.h:
+../../../../framework/src/mmipal/mmipal.h:
+../../../../framework/src/lwip/port/arch/sys_arch.h:
+../../../../framework/morselib/include/mmhal_app.h:
+../../../../framework/morselib/include/mmhal_os.h:
+../../../../framework/src/lwip/src/include/lwip/debug.h:
+../../../../framework/src/lwip/src/include/lwip/arch.h:
+../../../../framework/src/lwip/port/arch/cc.h:
+../../../../framework/src/lwip/src/include/morse/on_demand_timers.h:
+../../../../framework/src/lwip/src/include/lwip/priv/api_msg.h:
+../../../../framework/src/lwip/src/include/lwip/ip_addr.h:
+../../../../framework/src/lwip/src/include/lwip/def.h:
+../../../../framework/src/lwip/src/include/lwip/ip4_addr.h:
+../../../../framework/src/lwip/src/include/lwip/ip6_addr.h:
+../../../../framework/src/lwip/src/include/lwip/def.h:
+../../../../framework/src/lwip/src/include/lwip/err.h:
+../../../../framework/src/lwip/src/include/lwip/sys.h:
+../../../../framework/src/lwip/src/include/lwip/igmp.h:
+../../../../framework/src/lwip/src/include/lwip/netif.h:
+../../../../framework/src/lwip/src/include/lwip/pbuf.h:
+../../../../framework/src/lwip/src/include/lwip/stats.h:
+../../../../framework/src/lwip/src/include/lwip/mem.h:
+../../../../framework/src/lwip/src/include/lwip/memp.h:
+../../../../framework/src/lwip/src/include/lwip/priv/memp_std.h:
+../../../../framework/src/lwip/src/include/lwip/priv/memp_priv.h:
+../../../../framework/src/lwip/src/include/lwip/priv/mem_priv.h:
+../../../../framework/src/lwip/src/include/lwip/api.h:
+../../../../framework/src/lwip/src/include/lwip/netbuf.h:
+../../../../framework/src/lwip/src/include/lwip/priv/tcpip_priv.h:
+../../../../framework/src/lwip/src/include/lwip/tcpip.h:
+../../../../framework/src/lwip/src/include/lwip/timeouts.h:
+../../../../framework/src/lwip/src/include/lwip/ip.h:
+../../../../framework/src/lwip/src/include/lwip/ip4.h:
+../../../../framework/src/lwip/src/include/lwip/prot/ip4.h:
+../../../../framework/src/lwip/src/include/lwip/ip6.h:
+../../../../framework/src/lwip/src/include/lwip/prot/ip.h:
+../../../../framework/src/lwip/src/include/lwip/udp.h:
+../../../../framework/src/lwip/src/include/lwip/prot/udp.h:
+../../../../framework/src/lwip/src/include/lwip/tcp.h:
+../../../../framework/src/lwip/src/include/lwip/tcpbase.h:
+../../../../framework/src/lwip/src/include/lwip/icmp.h:
+../../../../framework/src/lwip/src/include/lwip/prot/icmp.h:
+../../../../framework/src/lwip/src/include/lwip/raw.h:
+../../../../framework/src/lwip/src/include/lwip/dns.h:
+../../../../framework/src/lwip/src/include/lwip/mld6.h:

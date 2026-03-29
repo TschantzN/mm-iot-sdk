@@ -60,6 +60,10 @@ BSP_DRIVERS_SRCS_C += Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_pwr.c
 BSP_DRIVERS_SRCS_C += Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_pwr_ex.c
 BSP_DRIVERS_SRCS_C += Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_rcc.c
 BSP_DRIVERS_SRCS_C += Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_rcc_ex.c
+
+BSP_DRIVERS_SRCS_C += Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_spi.c
+BSP_DRIVERS_SRCS_C += Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_spi_ex.c
+
 BSP_DRIVERS_SRCS_C += Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_rng.c
 BSP_DRIVERS_SRCS_C += Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_rng_ex.c
 BSP_DRIVERS_SRCS_C += Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_tim.c
