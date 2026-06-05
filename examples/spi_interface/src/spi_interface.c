@@ -179,6 +179,12 @@ struct udp_broadcast_rx_metadata
     uint32_t id;
 };
 
+// --- Variables de Profilage DWT ---
+volatile uint32_t dwt_start = 0;
+volatile uint32_t dwt_end = 0;
+volatile uint32_t mcu_cycles = 0;
+extern uint32_t SystemCoreClock; // Fourni par le système STM32 (ex: 160000000 pour 160 MHz)
+
 /** Global data structure used in RX mode to record metadata. */
 static struct udp_broadcast_rx_metadata rx_metadata = { 0 };
 
@@ -288,11 +294,16 @@ static void udp_broadcast_tx_start(struct udp_pcb *pcb)
 
     ip_set_option(pcb, SOF_BROADCAST);
     ip_addr_t dest_ip;
-    IP4_ADDR(ip_2_ip4(&dest_ip), 192, 168, 12, 255);
+    IP4_ADDR(ip_2_ip4(&dest_ip), 192, 168, 12, 10);
 
-    printf(">>> PONT SPI-WIFI ACTIVE ! En attente de la Jetson... <<<\n");
+    // --- ACTIVATION DU COMPTEUR DE CYCLES DWT ---
+    CoreDebug->DEMCR |= CoreDebug_DEMCR_TRCENA_Msk;
+   	DWT->CYCCNT = 0;
+   	DWT->CTRL |= DWT_CTRL_CYCCNTENA_Msk;
+
+    printf(">>> PONT SPI-WIFI ACTIVE ! En attente de la Rpi... <<<\n");
     HAL_GPIO_WritePin(GPIOD, GPIO_PIN_15, GPIO_PIN_SET);
-
+    uint32_t packet_counter = 0;
         while (1)
         {
             if (spi_packet_received) {
@@ -308,16 +319,27 @@ static void udp_broadcast_tx_start(struct udp_pcb *pcb)
             	    pbuf_free(p);
             	}
 
+            	// --- ARRÊT DU CHRONO ---
+            	dwt_end = DWT->CYCCNT;
+            	mcu_cycles = dwt_end - dwt_start;
+
+            	// Affichage 1 fois tous les 100 paquets (pour ne pas bloquer le CPU avec l'UART)
+            	if ((packet_counter++ % 100) == 0) {
+            	    // SystemCoreClock vaut 160000000 (160 MHz)
+            	    uint32_t freq_mhz = SystemCoreClock / 1000000;
+            	    uint32_t time_us = mcu_cycles / freq_mhz;
+
+            		printf("[Profilage] Temps de traitement MCU : %lu us (%lu cycles)\n", time_us, mcu_cycles);
+            	}
+
                 spi_packet_received = false;
 
                 // STM32 écoute
                 HAL_SPI_Receive_IT(&hspi1, spi_rx_buffer, SPI_PAYLOAD_SIZE);
-
-                // Ensuite GO pour la Jetson
                 HAL_GPIO_WritePin(GPIOD, GPIO_PIN_15, GPIO_PIN_SET);
 
             } else {
-                mmosal_task_sleep(1);
+               // mmosal_task_sleep(1);
             }
         }
 }
@@ -424,9 +446,12 @@ void SPI_Slave_Init(void)
 void HAL_SPI_RxCpltCallback(SPI_HandleTypeDef *hspi)
 {
     if (hspi->Instance == SPI1) {
+    	// Démarrer le chrono
+    	dwt_start = DWT->CYCCNT;
+    	// mesure
     	HAL_GPIO_WritePin(GPIOD, GPIO_PIN_15, GPIO_PIN_RESET);
         spi_packet_received = true;
-        HAL_SPI_Receive_IT(&hspi1, spi_rx_buffer, SPI_PAYLOAD_SIZE);
+        //HAL_SPI_Receive_IT(&hspi1, spi_rx_buffer, SPI_PAYLOAD_SIZE); //ca faisait un double receive donc erreur -> donc un peut de lantence en plus
     }
 }
 
@@ -448,15 +473,28 @@ void app_init(void)
 
     HAL_SPI_Receive_IT(&hspi1, spi_rx_buffer, SPI_PAYLOAD_SIZE);
 
+    // Configuration d'une QoS ultra-agressive pour le FPV
+    struct mmwlan_qos_queue_params fpv_qos = {
+        .aci = 3,         // ACI 3 = Voice (Correspond au TOS 0xC0 de LwIP)
+        .aifs = 2,        // Temps d'attente inter-trame minimum légal (ultra rapide)
+        .cw_min = 1,      // Fenêtre de contention quasi-nulle (parle tout de suite)
+        .cw_max = 1,      // S'il y a collision, ne recule presque pas
+        .txop_max_us = 0  // Désactivé
+    };
+
+    // À appeler avant mmwlan_sta_enable ou pendant l'init
+    mmwlan_set_default_qos_queue_params(&fpv_qos, 1);
+
     app_wlan_init();
     mmipal_set_link_status_callback(link_status_callback);
 
     printf("Connexion a l'AP OpenWrt en cours...\n");
     app_wlan_start();
 
-    mmwlan_ate_override_rate_control(MMWLAN_MCS_2, MMWLAN_BW_2MHZ, MMWLAN_GI_NONE);
-    printf("forcage OK : 2 MHz / MCS 2 force.\n");
+    mmwlan_ate_override_rate_control(MMWLAN_MCS_6, MMWLAN_BW_8MHZ, MMWLAN_GI_NONE);
+    printf("forcage OK : 8 MHz / MCS 4 force.\n");
     mmwlan_set_power_save_mode(MMWLAN_PS_DISABLED); // pour que quand il n'est pas sous load les ping passe bien
+
 
     while (!is_network_ready) {
         mmosal_task_sleep(10);
@@ -464,6 +502,9 @@ void app_init(void)
 
     struct udp_pcb *pcb = init_udp_pcb();
     if (pcb != NULL) {
+    	// 0xC0 = CS6 (Internetwork Control) -> Souvent mappé sur TID 6/7 (Voice)
+    	// 0xA0 = CS5 -> Mappé sur TID 4/5 (Video)
+    	pcb->tos = 0xC0;
         udp_broadcast_tx_start(pcb);
     }
 
