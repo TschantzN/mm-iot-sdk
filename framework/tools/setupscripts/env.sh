@@ -18,12 +18,12 @@ else
     return 1
 fi
 
-source $SCRIPT_DIR/config.sh
+source $SCRIPT_DIR/config.sh || return 1
 
 # Source setup.d scripts for variable definitions only (no install logic)
 VARS_ONLY=1
-source $SCRIPT_DIR/setup.d/S09_gcc-arm-none-eabi-14
-source $SCRIPT_DIR/setup.d/S20_openocd
+source $SCRIPT_DIR/setup.d/S09_gcc-arm-none-eabi-14 || return 1
+source $SCRIPT_DIR/setup.d/S20_openocd || return 1
 unset VARS_ONLY
 
 # Set MMIOT_ROOT environment variable to the framework directory that this script resides under.
@@ -74,4 +74,4 @@ fi
 export PATH=$HOME/.local/bin:$PATH
 
 # MM-IoT-SDK Version
-export MMIOT_VERSION="2.11.2"
+export MMIOT_VERSION="2.12.3"

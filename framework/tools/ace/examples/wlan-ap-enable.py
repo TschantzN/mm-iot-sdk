@@ -51,8 +51,16 @@ def _main():
         Supported values [19 20 21]. If not set, group 19 is preferred.
     """)
 
-    parser.add_argument("--halow_channel", default=44, help="S1G channel number to use for AP")
-    parser.add_argument("--op_class", default=71, help="Global operating class to use for AP")
+    parser.add_argument("--halow_channel", default=44,
+                        help="""
+        S1G channel number to use for AP.
+        Set to 0 to inherit from the active STA VIF if one exists.
+    """)
+    parser.add_argument("--op_class", default=71,
+                        help="""
+        Global operating class to use for AP.
+        Set to 0 to inherit from the active STA VIF if one exists.
+    """)
     parser.add_argument("--halow_primary_bandwidth", default=2, help="Primary BW to use on AP")
     parser.add_argument("--halow_primary_channel_index", default="auto",
                         help="Primary channel index to use on AP")

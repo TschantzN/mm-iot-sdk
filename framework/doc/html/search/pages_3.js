@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['host_20power_20save_0',['Host Power Save',['../MMHOSTPOWERSAVE.html',1,'']]]
+  ['getting_20started_0',['Getting Started',['../GETTING_STARTED.html',1,'']]]
 ];

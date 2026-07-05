@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['debugging_20with_20gdb_0',['Debugging with GDB',['../DEBUGGING.html',1,'']]],
-  ['deprecated_20list_1',['Deprecated List',['../deprecated.html',1,'']]]
+  ['bcf_20regulatory_20channel_20support_0',['BCF regulatory channel support',['../BCF_REGDOM_SUPPORT.html',1,'']]]
 ];

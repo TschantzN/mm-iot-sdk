@@ -30,7 +30,7 @@
   <td id="projectlogo"><img alt="Logo" src="logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Morse Micro IoT SDK
-   &#160;<span id="projectnumber">2.11.2</span>
+   &#160;<span id="projectnumber">2.12.3</span>
    </div>
   </td>
  </tr>
@@ -156,7 +156,7 @@ Writing a new Key-Value pair</h2>
 <p >To write a new key value pair the system first erases the secondary partition. Then it copies all key-value pairs from the primary partition to the secondary partition. If a key with the same name as the new key is found then it is excluded from the copy. The system then appends the new Key-Value pair to the end of the list. If the new data is NULL then it skips writing the new Key-Value pair effectively deleting the named key. Once this is done, the new checksum is computed and the header is written after incrementing the version number by 1. The written data is then validated and if correct the partitions are swapped and the newly written partition becomes the primary.</p>
 <h2><a class="anchor" id="autotoc_md45"></a>
 Reading Data</h2>
-<p >To read data we simply scan the primary partition Key-Value by Key-Value till we find the requested key or run into the <code>0xFF</code> marker signifying end of the list.</p>
+<p >To read data we simply scan the primary partition Key-Value by Key-Value till we find the requested key or run into the <code>0xFF</code> marker signifying end of the list. If an optional valid factory partition is configured, and the key is not found in the writable partition, the factory partition is scanned as a fallback.</p>
 <h1><a class="anchor" id="MMCONFIG_PROGRAMMING"></a>
 Programming the config store from a host PC</h1>
 <p >This section provides instructions for programming the config store from a host PC via the command line.</p>

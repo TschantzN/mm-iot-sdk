@@ -30,7 +30,7 @@
   <td id="projectlogo"><img alt="Logo" src="logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Morse Micro IoT SDK
-   &#160;<span id="projectnumber">2.11.2</span>
+   &#160;<span id="projectnumber">2.12.3</span>
    </div>
   </td>
  </tr>
@@ -136,6 +136,9 @@ Functions</h2></td></tr>
 <tr class="memitem:ga74809c11ae255459a980efda8327f650"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__MMCONFIG__API.html#ga74809c11ae255459a980efda8327f650">mmconfig_eraseall</a> (void)</td></tr>
 <tr class="memdesc:ga74809c11ae255459a980efda8327f650"><td class="mdescLeft">&#160;</td><td class="mdescRight">Erases all flash blocks allocated to persistent storage and write the signature at the 2 copies in flash.  <a href="group__MMCONFIG__API.html#ga74809c11ae255459a980efda8327f650">More...</a><br /></td></tr>
 <tr class="separator:ga74809c11ae255459a980efda8327f650"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga118c7071c9ce15c408569784d06caaef"><td class="memItemLeft" align="right" valign="top">enum <a class="el" href="group__MMCONFIG__API.html#ga3f0ca3ae6640a9e5436d2b7c89d36f17">mmconfig_result</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__MMCONFIG__API.html#ga118c7071c9ce15c408569784d06caaef">mmconfig_check_factory_partition_status</a> (void)</td></tr>
+<tr class="memdesc:ga118c7071c9ce15c408569784d06caaef"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check the status of the optional factory MMCONFIG partition.  <a href="group__MMCONFIG__API.html#ga118c7071c9ce15c408569784d06caaef">More...</a><br /></td></tr>
+<tr class="separator:ga118c7071c9ce15c408569784d06caaef"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gab1379a02dfbef05b86b02a475f09f484"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__MMCONFIG__API.html#gab1379a02dfbef05b86b02a475f09f484">mmconfig_write_data</a> (const char *key, const void *data, size_t size)</td></tr>
 <tr class="memdesc:gab1379a02dfbef05b86b02a475f09f484"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes the raw data to persistent store location identified by key.  <a href="group__MMCONFIG__API.html#gab1379a02dfbef05b86b02a475f09f484">More...</a><br /></td></tr>
 <tr class="separator:gab1379a02dfbef05b86b02a475f09f484"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -200,7 +203,7 @@ Functions</h2></td></tr>
 
 <p>The maximum length of a key in bytes. </p>
 
-<p class="definition">Definition at line <a class="el" href="mmconfig_8h_source.html#l00217">217</a> of file <a class="el" href="mmconfig_8h_source.html">mmconfig.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mmconfig_8h_source.html#l00219">219</a> of file <a class="el" href="mmconfig_8h_source.html">mmconfig.h</a>.</p>
 
 </div>
 </div>
@@ -243,7 +246,7 @@ Functions</h2></td></tr>
 </td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="mmconfig_8h_source.html#l00220">220</a> of file <a class="el" href="mmconfig_8h_source.html">mmconfig.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mmconfig_8h_source.html#l00222">222</a> of file <a class="el" href="mmconfig_8h_source.html">mmconfig.h</a>.</p>
 
 </div>
 </div>
@@ -284,6 +287,28 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Returns number of bytes read and allocated on success. On error returns: <code>MMCONFIG_ERR_INVALID_KEY</code> if key is invalid <code>MMCONFIG_ERR_NOT_FOUND</code> if the specified key was not found <code>MMCONFIG_ERR_INSUFFICIENT_MEMORY</code> if memory could not be allocated Other negative number for other errors. </dd></dl>
+
+</div>
+</div>
+<a id="ga118c7071c9ce15c408569784d06caaef" name="ga118c7071c9ce15c408569784d06caaef"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga118c7071c9ce15c408569784d06caaef">&#9670;&nbsp;</a></span>mmconfig_check_factory_partition_status()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="group__MMCONFIG__API.html#ga3f0ca3ae6640a9e5436d2b7c89d36f17">mmconfig_result</a> mmconfig_check_factory_partition_status </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Check the status of the optional factory MMCONFIG partition. </p>
+<p >The factory partition uses the same on-flash format as a single MMCONFIG image and is treated as read-only. If valid, it supplies fallback values for keys not present in the writable partition. Note that calling this will also initialize any other config partition.</p>
+<dl class="section return"><dt>Returns</dt><dd>Returns <code>MMCONFIG_OK</code> if the factory partition is configured and valid, <code>MMCONFIG_ERR_NOT_SUPPORTED</code> if no usable factory partition is configured, or <code>MMCONFIG_ERR_INVALID_PARTITION</code> if the configured partition is invalid. </dd></dl>
 
 </div>
 </div>
@@ -357,6 +382,7 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Deletes the specified key(s) from persistent store. </p>
+<p >If a factory MMCONFIG partition is configured, this only deletes matching key(s) from the writable partition. Reads for deleted keys will fall back to the factory partition if matching factory values exist.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">key</td><td>Identifies the data element in persistent storage and is a case insensitive alphanumeric (plus underscore) string starting with an alpha. Same rules as a C variable name, but case insensitive. For deletion a wildcard (*) may be specified at the end to delete multiple keys in one go. Must be a null terminated string. </td></tr>
@@ -365,7 +391,7 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Returns <code>MMCONFIG_OK</code> on success. On error returns: <code>MMCONFIG_ERR_INVALID_KEY</code> if key is invalid <code>MMCONFIG_ERR_FULL</code> if insufficient space to write data Other negative number for other errors. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="mmconfig_8h_source.html#l00300">300</a> of file <a class="el" href="mmconfig_8h_source.html">mmconfig.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mmconfig_8h_source.html#l00325">325</a> of file <a class="el" href="mmconfig_8h_source.html">mmconfig.h</a>.</p>
 
 </div>
 </div>
@@ -386,6 +412,7 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Erases all flash blocks allocated to persistent storage and write the signature at the 2 copies in flash. </p>
+<p >If a factory MMCONFIG partition is configured, it is not erased. After this call, reads for keys that are not present in the writable partition will fall back to the factory partition.</p>
 <dl class="section return"><dt>Returns</dt><dd>It returns 0 on success or an error code on failure. </dd></dl>
 
 </div>

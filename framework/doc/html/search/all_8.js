@@ -6,5 +6,6 @@ var searchData=
   ['home_5fchannel_5fdwell_5ftime_5fms_3',['home_channel_dwell_time_ms',['../structmmwlan__scan__config.html#aa70425bf650c371fd4a9ec3c39366d74',1,'mmwlan_scan_config']]],
   ['host_20power_20save_4',['Host Power Save',['../MMHOSTPOWERSAVE.html',1,'']]],
   ['http_2ec_5',['http.c',['../http_8c.html',1,'']]],
-  ['hw_5frestart_5fcounter_6',['hw_restart_counter',['../structmmwlan__stats__umac__data.html#ab260f8195923c43a77477eb980341e80',1,'mmwlan_stats_umac_data']]]
+  ['hw_5fflow_5fctrl_5fen_6',['hw_flow_ctrl_en',['../structmmhal__uart__config.html#a4c725dd0d68be50d8545bd93669c223a',1,'mmhal_uart_config']]],
+  ['hw_5frestart_5fcounter_7',['hw_restart_counter',['../structmmwlan__stats__umac__data.html#ab260f8195923c43a77477eb980341e80',1,'mmwlan_stats_umac_data']]]
 ];

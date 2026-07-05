@@ -24,6 +24,6 @@ case $MORSE_ARCH in
         ;;
     *)
         echo "Unsupported architecture: $MORSE_ARCH"
-        exit 1
+        return 1
         ;;
 esac

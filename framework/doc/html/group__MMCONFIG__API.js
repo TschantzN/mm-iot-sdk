@@ -2,7 +2,8 @@ var group__MMCONFIG__API =
 [
     [ "mmconfig_update_node", "structmmconfig__update__node.html", [
       [ "data", "structmmconfig__update__node.html#a7807055e49be92575611543ddfcc647b", null ],
-      [ "key", "structmmconfig__update__node.html#ad1cd07f5d463e79dfbe6aa4ef40057d0", null ],
+      [ "data_malloced", "structmmconfig__update__node.html#a1c7df1ebeda3f1c517494e9525a968b9", null ],
+      [ "key", "structmmconfig__update__node.html#aa232a84cba71d0d13ae90af525d22354", null ],
       [ "next", "structmmconfig__update__node.html#af79436c45fcd5c627aac9fd4a026d3fb", null ],
       [ "size", "structmmconfig__update__node.html#a2b33d5c71d4d5619ce2041c158f4a5f2", null ]
     ] ],
@@ -21,6 +22,7 @@ var group__MMCONFIG__API =
       [ "MMCONFIG_ERR_WILDCARD_KEY", "group__MMCONFIG__API.html#gga3f0ca3ae6640a9e5436d2b7c89d36f17ae51358eb11318a13715b767f9fcd2bf5", null ]
     ] ],
     [ "mmconfig_alloc_and_load", "group__MMCONFIG__API.html#gaed5b0b985172bf514b863064b84f5228", null ],
+    [ "mmconfig_check_factory_partition_status", "group__MMCONFIG__API.html#ga118c7071c9ce15c408569784d06caaef", null ],
     [ "mmconfig_check_usage", "group__MMCONFIG__API.html#ga8da661777231d2aaaa2c8b327c707471", null ],
     [ "mmconfig_delete_key", "group__MMCONFIG__API.html#ga116bd92e4bd372a3964ff66dce82a657", null ],
     [ "mmconfig_eraseall", "group__MMCONFIG__API.html#ga74809c11ae255459a980efda8327f650", null ],

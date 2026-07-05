@@ -30,7 +30,7 @@
   <td id="projectlogo"><img alt="Logo" src="logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Morse Micro IoT SDK
-   &#160;<span id="projectnumber">2.11.2</span>
+   &#160;<span id="projectnumber">2.12.3</span>
    </div>
   </td>
  </tr>
@@ -95,8 +95,8 @@ $(document).ready(function(){initNavTree('group__MMWLAN__WNM.html',''); initResi
 </div><!--header-->
 <div class="contents">
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<dl class="section note"><dt>Note</dt><dd>It is highly recommended to refer to Morse Micro App Note 04 on WNM sleep for a more detailed explanation on how this feature works.</dd></dl>
-<p>WNM sleep is an extended power save mode in which the STA need not listen for every DTIM beacon and need not perform rekey, allowing the STA to remain associated and reduce power consumption when it has no traffic to send or receive from the AP. While a STA is in WNM sleep it will be unable to communicate with the AP, and thus any traffic for the STA may be buffered or dropped at the discretion of the AP while the STA is in WNM sleep.</p>
+<p >WNM sleep is an extended power save mode in which the STA need not listen for every DTIM beacon and need not perform rekey, allowing the STA to remain associated and reduce power consumption when it has no traffic to send or receive from the AP. </p>
+<p >While a STA is in WNM sleep it will be unable to communicate with the AP, and thus any traffic for the STA may be buffered or dropped at the discretion of the AP while the STA is in WNM sleep.</p>
 <dl class="section note"><dt>Note</dt><dd>WNM sleep can only be entered after the STA is associated to the AP. The AP must also support WNM sleep.</dd></dl>
 <p>When entry to WNM sleep is enabled via this API, the STA sends a request to the AP and after successful negotiation, the chip is either put into a lower power mode or powered down completely, depending on arguments given when WNM sleep mode was enabled. The datapath is paused during this time. If the STA does not successfully negotiate with the AP to enter WNM Sleep, it will return an error code and the chip will not enter a low power mode.</p>
 <p >When WNM sleep is disabled, the chip returns to normal operation and sends a request to the AP to exit WNM sleep. Note that the chip will exit low power mode regardless of whether or not the exit request was successful. WNM sleep will be exited if <a class="el" href="group__MMWLAN__CTRL.html#ga83480307a380060f5a1e03eaaf634081">mmwlan_shutdown</a> or <a class="el" href="group__MMWLAN__STA.html#gaea4e82b03668e794165ef372931bbe0d">mmwlan_sta_disable</a> is invoked.</p>
@@ -144,10 +144,10 @@ Functions</h2></td></tr>
 <p>Initializer for <a class="el" href="structmmwlan__set__wnm__sleep__enabled__args.html">mmwlan_set_wnm_sleep_enabled_args</a>. </p>
 <p >For example:</p>
 <div class="fragment"><div class="line"><span class="keyword">struct </span><a class="code hl_struct" href="structmmwlan__set__wnm__sleep__enabled__args.html">mmwlan_set_wnm_sleep_enabled_args</a> wnm_sleep_args = <a class="code hl_define" href="group__MMWLAN__WNM.html#gae4c20750960f4199eb754b7b3e10569b">MMWLAN_SET_WNM_SLEEP_ENABLED_ARGS_INIT</a>;</div>
-<div class="ttc" id="agroup__MMWLAN__WNM_html_gae4c20750960f4199eb754b7b3e10569b"><div class="ttname"><a href="group__MMWLAN__WNM.html#gae4c20750960f4199eb754b7b3e10569b">MMWLAN_SET_WNM_SLEEP_ENABLED_ARGS_INIT</a></div><div class="ttdeci">#define MMWLAN_SET_WNM_SLEEP_ENABLED_ARGS_INIT</div><div class="ttdoc">Initializer for mmwlan_set_wnm_sleep_enabled_args.</div><div class="ttdef"><b>Definition:</b> <a href="mmwlan_8h_source.html#l01505">mmwlan.h:1505</a></div></div>
-<div class="ttc" id="astructmmwlan__set__wnm__sleep__enabled__args_html"><div class="ttname"><a href="structmmwlan__set__wnm__sleep__enabled__args.html">mmwlan_set_wnm_sleep_enabled_args</a></div><div class="ttdoc">Structure for storing WNM sleep extended arguments.</div><div class="ttdef"><b>Definition:</b> <a href="mmwlan_8h_source.html#l01488">mmwlan.h:1489</a></div></div>
+<div class="ttc" id="agroup__MMWLAN__WNM_html_gae4c20750960f4199eb754b7b3e10569b"><div class="ttname"><a href="group__MMWLAN__WNM.html#gae4c20750960f4199eb754b7b3e10569b">MMWLAN_SET_WNM_SLEEP_ENABLED_ARGS_INIT</a></div><div class="ttdeci">#define MMWLAN_SET_WNM_SLEEP_ENABLED_ARGS_INIT</div><div class="ttdoc">Initializer for mmwlan_set_wnm_sleep_enabled_args.</div><div class="ttdef"><b>Definition:</b> <a href="mmwlan_8h_source.html#l01498">mmwlan.h:1498</a></div></div>
+<div class="ttc" id="astructmmwlan__set__wnm__sleep__enabled__args_html"><div class="ttname"><a href="structmmwlan__set__wnm__sleep__enabled__args.html">mmwlan_set_wnm_sleep_enabled_args</a></div><div class="ttdoc">Structure for storing WNM sleep extended arguments.</div><div class="ttdef"><b>Definition:</b> <a href="mmwlan_8h_source.html#l01481">mmwlan.h:1482</a></div></div>
 </div><!-- fragment --> 
-<p class="definition">Definition at line <a class="el" href="mmwlan_8h_source.html#l01505">1505</a> of file <a class="el" href="mmwlan_8h_source.html">mmwlan.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mmwlan_8h_source.html#l01498">1498</a> of file <a class="el" href="mmwlan_8h_source.html">mmwlan.h</a>.</p>
 
 </div>
 </div>
@@ -191,7 +191,7 @@ Negotiation with the AP is required to enter WNM sleep. As such the transceiver 
 </dl>
 <dl class="section return"><dt>Returns</dt><dd><a class="el" href="group__MMWLAN.html#gga0039072000d47e5c3712686bf1e43086a559d87849add57871ea032a5a1a35c4c">MMWLAN_SUCCESS</a> on success, MMWLAN_UNAVAILABLE if already requested or if not currently connected, else an appropriate error code. <a class="el" href="group__MMWLAN.html#gga0039072000d47e5c3712686bf1e43086a44ca87b719a15e19375cbcddd81bc152">MMWLAN_TIMED_OUT</a> if the maximum retry request reached. For WNM sleep exit request, this means that the device exited WNM sleep but failed to inform the AP. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="mmwlan_8h_source.html#l01561">1561</a> of file <a class="el" href="mmwlan_8h_source.html">mmwlan.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mmwlan_8h_source.html#l01554">1554</a> of file <a class="el" href="mmwlan_8h_source.html">mmwlan.h</a>.</p>
 
 </div>
 </div>

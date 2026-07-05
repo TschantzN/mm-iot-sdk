@@ -30,7 +30,7 @@
   <td id="projectlogo"><img alt="Logo" src="logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Morse Micro IoT SDK
-   &#160;<span id="projectnumber">2.11.2</span>
+   &#160;<span id="projectnumber">2.12.3</span>
    </div>
   </td>
  </tr>
@@ -90,6 +90,7 @@ $(document).ready(function(){initNavTree('group__MMHAL__FLASH.html',''); initRes
   <div class="summary">
 <a href="#nested-classes">Data Structures</a> &#124;
 <a href="#define-members">Macros</a> &#124;
+<a href="#typedef-members">Typedefs</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle"><div class="title">Morse Micro Flash Hardware Abstraction Layer (mmhal_flash) API<div class="ingroups"><a class="el" href="group__MMHAL.html">Morse Micro Hardware Abstraction Layer (mmhal) API</a></div></div></div>
 </div><!--header-->
@@ -109,32 +110,63 @@ Macros</h2></td></tr>
 <tr class="memitem:ga3fc1d480437e6aa851faf2c86dbe3a75"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__MMHAL__FLASH.html#ga3fc1d480437e6aa851faf2c86dbe3a75">MMHAL_FLASH_ERASE_VALUE</a>&#160;&#160;&#160;0xFF</td></tr>
 <tr class="memdesc:ga3fc1d480437e6aa851faf2c86dbe3a75"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is the value erased flash bytes are set to.  <a href="group__MMHAL__FLASH.html#ga3fc1d480437e6aa851faf2c86dbe3a75">More...</a><br /></td></tr>
 <tr class="separator:ga3fc1d480437e6aa851faf2c86dbe3a75"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga911306a51678fe4a7ea083e902771016"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__MMHAL__FLASH.html#ga911306a51678fe4a7ea083e902771016">MMHAL_FLASH_ADDR_T</a>&#160;&#160;&#160;uint32_t</td></tr>
+<tr class="memdesc:ga911306a51678fe4a7ea083e902771016"><td class="mdescLeft">&#160;</td><td class="mdescRight">Underlying integer type for <a class="el" href="group__MMHAL__FLASH.html#ga92471855356eaa7a3e49ed978b885fbb">mmhal_flash_addr_t</a>.  <a href="group__MMHAL__FLASH.html#ga911306a51678fe4a7ea083e902771016">More...</a><br /></td></tr>
+<tr class="separator:ga911306a51678fe4a7ea083e902771016"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gac6e349d94610df400d97540a3790f576"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__MMHAL__FLASH.html#gac6e349d94610df400d97540a3790f576">MMHAL_FLASH_PARTITION_CONFIG_DEFAULT</a>&#160;&#160;&#160;{ 0, 0, false }</td></tr>
 <tr class="memdesc:gac6e349d94610df400d97540a3790f576"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initial values for <a class="el" href="structmmhal__flash__partition__config.html">mmhal_flash_partition_config</a>.  <a href="group__MMHAL__FLASH.html#gac6e349d94610df400d97540a3790f576">More...</a><br /></td></tr>
 <tr class="separator:gac6e349d94610df400d97540a3790f576"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
+Typedefs</h2></td></tr>
+<tr class="memitem:ga92471855356eaa7a3e49ed978b885fbb"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="group__MMHAL__FLASH.html#ga911306a51678fe4a7ea083e902771016">MMHAL_FLASH_ADDR_T</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__MMHAL__FLASH.html#ga92471855356eaa7a3e49ed978b885fbb">mmhal_flash_addr_t</a></td></tr>
+<tr class="memdesc:ga92471855356eaa7a3e49ed978b885fbb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Address type used by the mmhal flash API.  <a href="group__MMHAL__FLASH.html#ga92471855356eaa7a3e49ed978b885fbb">More...</a><br /></td></tr>
+<tr class="separator:ga92471855356eaa7a3e49ed978b885fbb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:gaabe05e475ba03621d7e4ba776ed2d616"><td class="memItemLeft" align="right" valign="top">const struct <a class="el" href="structmmhal__flash__partition__config.html">mmhal_flash_partition_config</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__MMHAL__FLASH.html#gaabe05e475ba03621d7e4ba776ed2d616">mmhal_get_mmconfig_partition</a> (void)</td></tr>
 <tr class="memdesc:gaabe05e475ba03621d7e4ba776ed2d616"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get MMCONFIG flash partition configuration.  <a href="group__MMHAL__FLASH.html#gaabe05e475ba03621d7e4ba776ed2d616">More...</a><br /></td></tr>
 <tr class="separator:gaabe05e475ba03621d7e4ba776ed2d616"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga45280345c4e63146ddba4a28a43fbf7b"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__MMHAL__FLASH.html#ga45280345c4e63146ddba4a28a43fbf7b">mmhal_flash_erase</a> (uint32_t block_address)</td></tr>
-<tr class="memdesc:ga45280345c4e63146ddba4a28a43fbf7b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Erases a specified block of flash.  <a href="group__MMHAL__FLASH.html#ga45280345c4e63146ddba4a28a43fbf7b">More...</a><br /></td></tr>
-<tr class="separator:ga45280345c4e63146ddba4a28a43fbf7b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga63486f8a2f1291fcf9675949dd14511f"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__MMHAL__FLASH.html#ga63486f8a2f1291fcf9675949dd14511f">mmhal_flash_getblocksize</a> (uint32_t block_address)</td></tr>
-<tr class="memdesc:ga63486f8a2f1291fcf9675949dd14511f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the size of the flash block at the specified address.  <a href="group__MMHAL__FLASH.html#ga63486f8a2f1291fcf9675949dd14511f">More...</a><br /></td></tr>
-<tr class="separator:ga63486f8a2f1291fcf9675949dd14511f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gabf7a0c5f9b2351de5dcc264c375fda34"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__MMHAL__FLASH.html#gabf7a0c5f9b2351de5dcc264c375fda34">mmhal_flash_read</a> (uint32_t read_address, uint8_t *<a class="el" href="sslclient_8c.html#abdc8ea8147d82c962a7d88863ee32ee0">buf</a>, size_t size)</td></tr>
-<tr class="memdesc:gabf7a0c5f9b2351de5dcc264c375fda34"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read a block of data from the specified Flash address into the buffer.  <a href="group__MMHAL__FLASH.html#gabf7a0c5f9b2351de5dcc264c375fda34">More...</a><br /></td></tr>
-<tr class="separator:gabf7a0c5f9b2351de5dcc264c375fda34"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga9ef64e3f9aa4f1aa4a91094471578dc1"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__MMHAL__FLASH.html#ga9ef64e3f9aa4f1aa4a91094471578dc1">mmhal_flash_write</a> (uint32_t write_address, const uint8_t *data, size_t size)</td></tr>
-<tr class="memdesc:ga9ef64e3f9aa4f1aa4a91094471578dc1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write a block of data to the specified Flash address.  <a href="group__MMHAL__FLASH.html#ga9ef64e3f9aa4f1aa4a91094471578dc1">More...</a><br /></td></tr>
-<tr class="separator:ga9ef64e3f9aa4f1aa4a91094471578dc1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga01f94b27ec4bbcb52571217319ae4342"><td class="memItemLeft" align="right" valign="top">const struct <a class="el" href="structmmhal__flash__partition__config.html">mmhal_flash_partition_config</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__MMHAL__FLASH.html#ga01f94b27ec4bbcb52571217319ae4342">mmhal_get_factory_mmconfig_partition</a> (void)</td></tr>
+<tr class="memdesc:ga01f94b27ec4bbcb52571217319ae4342"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get optional factory default MMCONFIG flash partition configuration.  <a href="group__MMHAL__FLASH.html#ga01f94b27ec4bbcb52571217319ae4342">More...</a><br /></td></tr>
+<tr class="separator:ga01f94b27ec4bbcb52571217319ae4342"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gafa86d6c04d0138a8eda6193977ad516c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__MMHAL__FLASH.html#gafa86d6c04d0138a8eda6193977ad516c">mmhal_flash_erase</a> (<a class="el" href="group__MMHAL__FLASH.html#ga92471855356eaa7a3e49ed978b885fbb">mmhal_flash_addr_t</a> block_address)</td></tr>
+<tr class="memdesc:gafa86d6c04d0138a8eda6193977ad516c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Erases a specified block of flash.  <a href="group__MMHAL__FLASH.html#gafa86d6c04d0138a8eda6193977ad516c">More...</a><br /></td></tr>
+<tr class="separator:gafa86d6c04d0138a8eda6193977ad516c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga9c6facda349baf089d3536183dd4f110"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__MMHAL__FLASH.html#ga9c6facda349baf089d3536183dd4f110">mmhal_flash_getblocksize</a> (<a class="el" href="group__MMHAL__FLASH.html#ga92471855356eaa7a3e49ed978b885fbb">mmhal_flash_addr_t</a> block_address)</td></tr>
+<tr class="memdesc:ga9c6facda349baf089d3536183dd4f110"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the size of the flash block at the specified address.  <a href="group__MMHAL__FLASH.html#ga9c6facda349baf089d3536183dd4f110">More...</a><br /></td></tr>
+<tr class="separator:ga9c6facda349baf089d3536183dd4f110"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga7a709cc462aba985b9f37df6ecda16f2"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__MMHAL__FLASH.html#ga7a709cc462aba985b9f37df6ecda16f2">mmhal_flash_read</a> (<a class="el" href="group__MMHAL__FLASH.html#ga92471855356eaa7a3e49ed978b885fbb">mmhal_flash_addr_t</a> read_address, uint8_t *<a class="el" href="sslclient_8c.html#abdc8ea8147d82c962a7d88863ee32ee0">buf</a>, size_t size)</td></tr>
+<tr class="memdesc:ga7a709cc462aba985b9f37df6ecda16f2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read a block of data from the specified Flash address into the buffer.  <a href="group__MMHAL__FLASH.html#ga7a709cc462aba985b9f37df6ecda16f2">More...</a><br /></td></tr>
+<tr class="separator:ga7a709cc462aba985b9f37df6ecda16f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga39a48646a7ac7d2b7b580c57086ab99c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__MMHAL__FLASH.html#ga39a48646a7ac7d2b7b580c57086ab99c">mmhal_flash_write</a> (<a class="el" href="group__MMHAL__FLASH.html#ga92471855356eaa7a3e49ed978b885fbb">mmhal_flash_addr_t</a> write_address, const uint8_t *data, size_t size)</td></tr>
+<tr class="memdesc:ga39a48646a7ac7d2b7b580c57086ab99c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write a block of data to the specified Flash address.  <a href="group__MMHAL__FLASH.html#ga39a48646a7ac7d2b7b580c57086ab99c">More...</a><br /></td></tr>
+<tr class="separator:ga39a48646a7ac7d2b7b580c57086ab99c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga9cf859409f0916684a34f5d4726cb2e3"><td class="memItemLeft" align="right" valign="top">const struct lfs_config *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__MMHAL__FLASH.html#ga9cf859409f0916684a34f5d4726cb2e3">mmhal_get_littlefs_config</a> (void)</td></tr>
 <tr class="memdesc:ga9cf859409f0916684a34f5d4726cb2e3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get LittleFS configuration.  <a href="group__MMHAL__FLASH.html#ga9cf859409f0916684a34f5d4726cb2e3">More...</a><br /></td></tr>
 <tr class="separator:ga9cf859409f0916684a34f5d4726cb2e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Macro Definition Documentation</h2>
+<a id="ga911306a51678fe4a7ea083e902771016" name="ga911306a51678fe4a7ea083e902771016"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga911306a51678fe4a7ea083e902771016">&#9670;&nbsp;</a></span>MMHAL_FLASH_ADDR_T</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MMHAL_FLASH_ADDR_T&#160;&#160;&#160;uint32_t</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Underlying integer type for <a class="el" href="group__MMHAL__FLASH.html#ga92471855356eaa7a3e49ed978b885fbb">mmhal_flash_addr_t</a>. </p>
+<p >Defaults to <code>uint32_t</code>. May be overridden by the build system (e.g. by defining <code>MMHAL_FLASH_ADDR_T</code> on the compiler command line) if a platform requires a wider integer type to represent a flash address. </p>
+
+<p class="definition">Definition at line <a class="el" href="mmhal__flash_8h_source.html#l00044">44</a> of file <a class="el" href="mmhal__flash_8h_source.html">mmhal_flash.h</a>.</p>
+
+</div>
+</div>
 <a id="ga3fc1d480437e6aa851faf2c86dbe3a75" name="ga3fc1d480437e6aa851faf2c86dbe3a75"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ga3fc1d480437e6aa851faf2c86dbe3a75">&#9670;&nbsp;</a></span>MMHAL_FLASH_ERASE_VALUE</h2>
 
@@ -168,13 +200,32 @@ Functions</h2></td></tr>
 
 <p>Initial values for <a class="el" href="structmmhal__flash__partition__config.html">mmhal_flash_partition_config</a>. </p>
 
-<p class="definition">Definition at line <a class="el" href="mmhal__flash_8h_source.html#l00072">72</a> of file <a class="el" href="mmhal__flash_8h_source.html">mmhal_flash.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mmhal__flash_8h_source.html#l00085">85</a> of file <a class="el" href="mmhal__flash_8h_source.html">mmhal_flash.h</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Typedef Documentation</h2>
+<a id="ga92471855356eaa7a3e49ed978b885fbb" name="ga92471855356eaa7a3e49ed978b885fbb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga92471855356eaa7a3e49ed978b885fbb">&#9670;&nbsp;</a></span>mmhal_flash_addr_t</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef <a class="el" href="group__MMHAL__FLASH.html#ga911306a51678fe4a7ea083e902771016">MMHAL_FLASH_ADDR_T</a> <a class="el" href="group__MMHAL__FLASH.html#ga92471855356eaa7a3e49ed978b885fbb">mmhal_flash_addr_t</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Address type used by the mmhal flash API. </p>
+
+<p class="definition">Definition at line <a class="el" href="mmhal__flash_8h_source.html#l00048">48</a> of file <a class="el" href="mmhal__flash_8h_source.html">mmhal_flash.h</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="ga45280345c4e63146ddba4a28a43fbf7b" name="ga45280345c4e63146ddba4a28a43fbf7b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga45280345c4e63146ddba4a28a43fbf7b">&#9670;&nbsp;</a></span>mmhal_flash_erase()</h2>
+<a id="gafa86d6c04d0138a8eda6193977ad516c" name="gafa86d6c04d0138a8eda6193977ad516c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gafa86d6c04d0138a8eda6193977ad516c">&#9670;&nbsp;</a></span>mmhal_flash_erase()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -182,7 +233,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">int mmhal_flash_erase </td>
           <td>(</td>
-          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramtype"><a class="el" href="group__MMHAL__FLASH.html#ga92471855356eaa7a3e49ed978b885fbb">mmhal_flash_addr_t</a>&#160;</td>
           <td class="paramname"><em>block_address</em></td><td>)</td>
           <td></td>
         </tr>
@@ -201,8 +252,8 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="ga63486f8a2f1291fcf9675949dd14511f" name="ga63486f8a2f1291fcf9675949dd14511f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga63486f8a2f1291fcf9675949dd14511f">&#9670;&nbsp;</a></span>mmhal_flash_getblocksize()</h2>
+<a id="ga9c6facda349baf089d3536183dd4f110" name="ga9c6facda349baf089d3536183dd4f110"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga9c6facda349baf089d3536183dd4f110">&#9670;&nbsp;</a></span>mmhal_flash_getblocksize()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -210,7 +261,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">uint32_t mmhal_flash_getblocksize </td>
           <td>(</td>
-          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramtype"><a class="el" href="group__MMHAL__FLASH.html#ga92471855356eaa7a3e49ed978b885fbb">mmhal_flash_addr_t</a>&#160;</td>
           <td class="paramname"><em>block_address</em></td><td>)</td>
           <td></td>
         </tr>
@@ -228,8 +279,8 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="gabf7a0c5f9b2351de5dcc264c375fda34" name="gabf7a0c5f9b2351de5dcc264c375fda34"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gabf7a0c5f9b2351de5dcc264c375fda34">&#9670;&nbsp;</a></span>mmhal_flash_read()</h2>
+<a id="ga7a709cc462aba985b9f37df6ecda16f2" name="ga7a709cc462aba985b9f37df6ecda16f2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga7a709cc462aba985b9f37df6ecda16f2">&#9670;&nbsp;</a></span>mmhal_flash_read()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -237,7 +288,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">int mmhal_flash_read </td>
           <td>(</td>
-          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramtype"><a class="el" href="group__MMHAL__FLASH.html#ga92471855356eaa7a3e49ed978b885fbb">mmhal_flash_addr_t</a>&#160;</td>
           <td class="paramname"><em>read_address</em>, </td>
         </tr>
         <tr>
@@ -273,8 +324,8 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="ga9ef64e3f9aa4f1aa4a91094471578dc1" name="ga9ef64e3f9aa4f1aa4a91094471578dc1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga9ef64e3f9aa4f1aa4a91094471578dc1">&#9670;&nbsp;</a></span>mmhal_flash_write()</h2>
+<a id="ga39a48646a7ac7d2b7b580c57086ab99c" name="ga39a48646a7ac7d2b7b580c57086ab99c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga39a48646a7ac7d2b7b580c57086ab99c">&#9670;&nbsp;</a></span>mmhal_flash_write()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -282,7 +333,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">int mmhal_flash_write </td>
           <td>(</td>
-          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramtype"><a class="el" href="group__MMHAL__FLASH.html#ga92471855356eaa7a3e49ed978b885fbb">mmhal_flash_addr_t</a>&#160;</td>
           <td class="paramname"><em>write_address</em>, </td>
         </tr>
         <tr>
@@ -316,6 +367,29 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>0 on success, or a negative number on failure. </dd></dl>
+
+</div>
+</div>
+<a id="ga01f94b27ec4bbcb52571217319ae4342" name="ga01f94b27ec4bbcb52571217319ae4342"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga01f94b27ec4bbcb52571217319ae4342">&#9670;&nbsp;</a></span>mmhal_get_factory_mmconfig_partition()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const struct <a class="el" href="structmmhal__flash__partition__config.html">mmhal_flash_partition_config</a> * mmhal_get_factory_mmconfig_partition </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get optional factory default MMCONFIG flash partition configuration. </p>
+<p >This partition uses the same on-flash format as a single MMCONFIG image, but is treated as read-only by <code>mmconfig</code>. If present and valid, values in this partition are used as fall-backs when a key is absent from the writable MMCONFIG partition. Platforms that do not provide a factory default partition may omit this function; a weak default implementation returns NULL.</p>
+<p >Note that unlike <code><a class="el" href="group__MMHAL__FLASH.html#gaabe05e475ba03621d7e4ba776ed2d616" title="Get MMCONFIG flash partition configuration.">mmhal_get_mmconfig_partition()</a></code>, the size here is used only for a single partition. Therefore it would be normal to define a factory partition that is half the size (or less) of the normal config partition, and it is not necessary to align it to a flash sector as it is not erased.</p>
+<dl class="section return"><dt>Returns</dt><dd>A static pointer to the factory MMCONFIG partition config, or NULL if not supported. </dd></dl>
 
 </div>
 </div>
@@ -360,6 +434,7 @@ Functions</h2></td></tr>
 
 <p>Get MMCONFIG flash partition configuration. </p>
 <p >MMCONFIG initialization is done by <code>mmconfig_init()</code> in <code>mmconfig.c</code>, which in turn calls this function to fetch the partition configuration for config store from the HAL layer. If config store is not supported by the platform then we just return NULL. This function returns a static pointer to <code>struct</code> <code><a class="el" href="structmmhal__flash__partition__config.html" title="Flash partition configuration structure.">mmhal_flash_partition_config</a></code>.</p>
+<p >Because primary/secondary partitions are used in the current implementation, the available config storage is half of the provided size.</p>
 <dl class="section return"><dt>Returns</dt><dd>A static pointer to the partition config for MMCONFIG, or NULL if not supported. </dd></dl>
 
 </div>

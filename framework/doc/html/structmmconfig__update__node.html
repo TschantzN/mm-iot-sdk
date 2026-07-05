@@ -30,7 +30,7 @@
   <td id="projectlogo"><img alt="Logo" src="logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Morse Micro IoT SDK
-   &#160;<span id="projectnumber">2.11.2</span>
+   &#160;<span id="projectnumber">2.12.3</span>
    </div>
   </td>
  </tr>
@@ -96,21 +96,24 @@ $(document).ready(function(){initNavTree('structmmconfig__update__node.html','')
 <div class="textblock"><p >Update node structure. </p>
 <p >Used to make a list of raw updates to write to the flash in a single operation. </p>
 
-<p class="definition">Definition at line <a class="el" href="mmconfig_8h_source.html#l00240">240</a> of file <a class="el" href="mmconfig_8h_source.html">mmconfig.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mmconfig_8h_source.html#l00242">242</a> of file <a class="el" href="mmconfig_8h_source.html">mmconfig.h</a>.</p>
 </div>
 <p><code>#include &lt;<a class="el" href="mmconfig_8h_source.html">mmconfig.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Data Fields</h2></td></tr>
-<tr class="memitem:ad1cd07f5d463e79dfbe6aa4ef40057d0"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmmconfig__update__node.html#ad1cd07f5d463e79dfbe6aa4ef40057d0">key</a></td></tr>
-<tr class="memdesc:ad1cd07f5d463e79dfbe6aa4ef40057d0"><td class="mdescLeft">&#160;</td><td class="mdescRight">The key, which should be pre-validated using <a class="el" href="group__MMCONFIG__API.html#gac4d12564d7dc99fcdec5aac2cf571669" title="Validates an entire key intended for data storage.">mmconfig_validate_key()</a>, unless it is to be used for multiple deletions and so ends in an asterisk '*'.  <a href="structmmconfig__update__node.html#ad1cd07f5d463e79dfbe6aa4ef40057d0">More...</a><br /></td></tr>
-<tr class="separator:ad1cd07f5d463e79dfbe6aa4ef40057d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa232a84cba71d0d13ae90af525d22354"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmmconfig__update__node.html#aa232a84cba71d0d13ae90af525d22354">key</a></td></tr>
+<tr class="memdesc:aa232a84cba71d0d13ae90af525d22354"><td class="mdescLeft">&#160;</td><td class="mdescRight">The key, which should be pre-validated using <a class="el" href="group__MMCONFIG__API.html#gac4d12564d7dc99fcdec5aac2cf571669" title="Validates an entire key intended for data storage.">mmconfig_validate_key()</a>, unless it is to be used for multiple deletions and so ends in an asterisk '*'.  <a href="structmmconfig__update__node.html#aa232a84cba71d0d13ae90af525d22354">More...</a><br /></td></tr>
+<tr class="separator:aa232a84cba71d0d13ae90af525d22354"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7807055e49be92575611543ddfcc647b"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmmconfig__update__node.html#a7807055e49be92575611543ddfcc647b">data</a></td></tr>
 <tr class="memdesc:a7807055e49be92575611543ddfcc647b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pointer to the data.  <a href="structmmconfig__update__node.html#a7807055e49be92575611543ddfcc647b">More...</a><br /></td></tr>
 <tr class="separator:a7807055e49be92575611543ddfcc647b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2b33d5c71d4d5619ce2041c158f4a5f2"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmmconfig__update__node.html#a2b33d5c71d4d5619ce2041c158f4a5f2">size</a></td></tr>
 <tr class="memdesc:a2b33d5c71d4d5619ce2041c158f4a5f2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Size of the data.  <a href="structmmconfig__update__node.html#a2b33d5c71d4d5619ce2041c158f4a5f2">More...</a><br /></td></tr>
 <tr class="separator:a2b33d5c71d4d5619ce2041c158f4a5f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1c7df1ebeda3f1c517494e9525a968b9"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmmconfig__update__node.html#a1c7df1ebeda3f1c517494e9525a968b9">data_malloced</a></td></tr>
+<tr class="memdesc:a1c7df1ebeda3f1c517494e9525a968b9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Boolean flag to indicate if data is dynamically allocated.  <a href="structmmconfig__update__node.html#a1c7df1ebeda3f1c517494e9525a968b9">More...</a><br /></td></tr>
+<tr class="separator:a1c7df1ebeda3f1c517494e9525a968b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af79436c45fcd5c627aac9fd4a026d3fb"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structmmconfig__update__node.html">mmconfig_update_node</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmmconfig__update__node.html#af79436c45fcd5c627aac9fd4a026d3fb">next</a></td></tr>
 <tr class="memdesc:af79436c45fcd5c627aac9fd4a026d3fb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pointer to the next node in the list.  <a href="structmmconfig__update__node.html#af79436c45fcd5c627aac9fd4a026d3fb">More...</a><br /></td></tr>
 <tr class="separator:af79436c45fcd5c627aac9fd4a026d3fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -131,25 +134,43 @@ Data Fields</h2></td></tr>
 <p>Pointer to the data. </p>
 <p >May be NULL to indicate deletion. </p>
 
-<p class="definition">Definition at line <a class="el" href="mmconfig_8h_source.html#l00250">250</a> of file <a class="el" href="mmconfig_8h_source.html">mmconfig.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mmconfig_8h_source.html#l00252">252</a> of file <a class="el" href="mmconfig_8h_source.html">mmconfig.h</a>.</p>
 
 </div>
 </div>
-<a id="ad1cd07f5d463e79dfbe6aa4ef40057d0" name="ad1cd07f5d463e79dfbe6aa4ef40057d0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad1cd07f5d463e79dfbe6aa4ef40057d0">&#9670;&nbsp;</a></span>key</h2>
+<a id="a1c7df1ebeda3f1c517494e9525a968b9" name="a1c7df1ebeda3f1c517494e9525a968b9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1c7df1ebeda3f1c517494e9525a968b9">&#9670;&nbsp;</a></span>data_malloced</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">char* mmconfig_update_node::key</td>
+          <td class="memname">bool mmconfig_update_node::data_malloced</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Boolean flag to indicate if data is dynamically allocated. </p>
+
+<p class="definition">Definition at line <a class="el" href="mmconfig_8h_source.html#l00258">258</a> of file <a class="el" href="mmconfig_8h_source.html">mmconfig.h</a>.</p>
+
+</div>
+</div>
+<a id="aa232a84cba71d0d13ae90af525d22354" name="aa232a84cba71d0d13ae90af525d22354"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa232a84cba71d0d13ae90af525d22354">&#9670;&nbsp;</a></span>key</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char* mmconfig_update_node::key</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p>The key, which should be pre-validated using <a class="el" href="group__MMCONFIG__API.html#gac4d12564d7dc99fcdec5aac2cf571669" title="Validates an entire key intended for data storage.">mmconfig_validate_key()</a>, unless it is to be used for multiple deletions and so ends in an asterisk '*'. </p>
 
-<p class="definition">Definition at line <a class="el" href="mmconfig_8h_source.html#l00246">246</a> of file <a class="el" href="mmconfig_8h_source.html">mmconfig.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mmconfig_8h_source.html#l00248">248</a> of file <a class="el" href="mmconfig_8h_source.html">mmconfig.h</a>.</p>
 
 </div>
 </div>
@@ -167,7 +188,7 @@ Data Fields</h2></td></tr>
 
 <p>Pointer to the next node in the list. </p>
 
-<p class="definition">Definition at line <a class="el" href="mmconfig_8h_source.html#l00256">256</a> of file <a class="el" href="mmconfig_8h_source.html">mmconfig.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mmconfig_8h_source.html#l00261">261</a> of file <a class="el" href="mmconfig_8h_source.html">mmconfig.h</a>.</p>
 
 </div>
 </div>
@@ -186,7 +207,7 @@ Data Fields</h2></td></tr>
 <p>Size of the data. </p>
 <p >May be zero to indicate deletion. </p>
 
-<p class="definition">Definition at line <a class="el" href="mmconfig_8h_source.html#l00253">253</a> of file <a class="el" href="mmconfig_8h_source.html">mmconfig.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mmconfig_8h_source.html#l00255">255</a> of file <a class="el" href="mmconfig_8h_source.html">mmconfig.h</a>.</p>
 
 </div>
 </div>

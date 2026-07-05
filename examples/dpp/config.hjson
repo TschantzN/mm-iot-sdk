@@ -30,11 +30,11 @@
      * this is equivalent to the write-string command */
     "strings" : {
         /* The Wi-Fi SSID */
-        "wlan.ssid": "MorseMicro"
+        // "wlan.ssid": "MorseMicro"
         /* The Wi-Fi password, not required if wlan.security is open */
-        "wlan.password": "12345678"
+        // "wlan.password": "12345678"
         /* The Wi-Fi security to use, valid values are sae, owe and open */
-        "wlan.security": "sae"
+        // "wlan.security": "sae"
         /* The 2 letter country code to ensure the correct regulatory domain is used */
         // "wlan.country_code": "XX"
 
@@ -118,7 +118,11 @@
          * duty cycle air time for allocation window is available to consume immediately. */
         // "wlan.duty_cycle_mode": "burst"
 
-        
+        /* The following settings are required only for the dpp app */
+        /* DPP provisioning mode: "pb" for Push Button (default), "qr" for QR Code
+         * Enrollee. */
+        "dpp.mode": "pb"
+
     },
     /* You can specify a list of key/value hex-strings in this section to write to config store
      * this is equivalent to the write-hex command */
@@ -150,6 +154,12 @@
          * to: $MMIOT_ROOT/morsefirmware/mm6108/bcfs/bcf_mf12345.mbin */
         // "bcf_file": "$MMIOT_ROOT/morsefirmware/mm6108/bcfs/bcf_mf08651_us.mbin"
 
-        
+        /* The following files are required only for the dpp app */
+        /* DER-encoded P-256 (prime256v1) private key for DPP QR enrollee bootstrap
+         * identity. If not set, a fresh keypair is generated automatically. Generate with:
+         * `openssl ecparam -name prime256v1 -genkey -noout -outform DER -out
+         * bootstrap.der` */
+        // "dpp.bootstrap_key": ""
+
     }
 }

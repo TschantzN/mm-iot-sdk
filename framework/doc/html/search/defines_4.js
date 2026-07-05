@@ -21,5 +21,7 @@ var searchData=
   ['default_5fudp_5fport_18',['DEFAULT_UDP_PORT',['../udp__broadcast_8c.html#a2f10de3cafe64664fa3b624ce8297588',1,'udp_broadcast.c']]],
   ['default_5fwnm_5fsleep_5fduration_5fms_19',['DEFAULT_WNM_SLEEP_DURATION_MS',['../wnm__sleep_8c.html#ac24997810835e75377c3eb4feca862af',1,'wnm_sleep.c']]],
   ['delay_5fbetween_5fpublishes_20',['DELAY_BETWEEN_PUBLISHES',['../mqttdemo_8c.html#a5fc89d18fbf89325385af2bb339deb9a',1,'mqttdemo.c']]],
-  ['dns_5fmax_5fname_5flength_21',['DNS_MAX_NAME_LENGTH',['../dns__client_8c.html#a3b01c79902063c170ef57deb72f56124',1,'dns_client.c']]]
+  ['dns_5fmax_5fname_5flength_21',['DNS_MAX_NAME_LENGTH',['../dns__client_8c.html#a3b01c79902063c170ef57deb72f56124',1,'dns_client.c']]],
+  ['dpp_5ftimeout_5fms_22',['DPP_TIMEOUT_MS',['../dpp_8c.html#a088754bab522073363247c0a2a1c9470',1,'dpp.c']]],
+  ['dpp_5furi_5fmax_5flen_23',['DPP_URI_MAX_LEN',['../dpp_8c.html#a75a519f33bb57d173885600e8921a984',1,'dpp.c']]]
 ];

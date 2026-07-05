@@ -34,5 +34,9 @@
         "configstore_base_address": "0x8004000",
         "configstore_size": "0x4000",
         "supported_platforms": ["mm-ekh08-wb55", "mm-ekh08-wb55-ble", "mm-mmecs02v2", "mm-ekh18-wb55"]
+    },
+    "emulated":
+    {
+        "supported_platforms": []
     }
 }

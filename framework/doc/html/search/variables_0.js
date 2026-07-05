@@ -16,5 +16,8 @@ var searchData=
   ['arg_13',['arg',['../structmmwlan__fatal__error__args.html#a08b8a08b894c3d7c10df4e6da83d1f03',1,'mmwlan_fatal_error_args']]],
   ['args_14',['args',['../structmmwlan__scan__req.html#aa043d7fb919fb60301e7e1031940a085',1,'mmwlan_scan_req::args()'],['../structmmwlan__dpp__cb__args.html#a02f8dc30ca3410a73f8ab26e190a28be',1,'mmwlan_dpp_cb_args::args()']]],
   ['async_5fstart_15',['async_start',['../structmmwlan__ap__args.html#a69607f4be5d5168749aecc6c9573412a',1,'mmwlan_ap_args']]],
-  ['avg_5ftime_5fms_16',['avg_time_ms',['../structstruct__ping__status.html#a9391646295b6c202a210ff7d5234b373',1,'struct_ping_status']]]
+  ['auth_5ffailure_16',['auth_failure',['../structmmwlan__dpp__cb__args.html#a49bd9a71d3efde0a02064959c1637896',1,'mmwlan_dpp_cb_args']]],
+  ['auth_5freq_5frx_17',['auth_req_rx',['../structmmwlan__dpp__cb__args.html#ace142e6525f352b11ed7e58d10e9219f',1,'mmwlan_dpp_cb_args']]],
+  ['auth_5fsuccess_18',['auth_success',['../structmmwlan__dpp__cb__args.html#a508b1daa63e1458332499dae031f68e7',1,'mmwlan_dpp_cb_args']]],
+  ['avg_5ftime_5fms_19',['avg_time_ms',['../structstruct__ping__status.html#a9391646295b6c202a210ff7d5234b373',1,'struct_ping_status']]]
 ];
