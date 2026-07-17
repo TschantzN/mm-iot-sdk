@@ -4,6 +4,7 @@ var porting__assistant_8c =
     [ "app_init", "porting__assistant_8c.html#add3190cf715f513666f4be42874d91e2", null ],
     [ "result_code_to_string", "porting__assistant_8c.html#aedcb0efe71b17040326527ecc5b2a835", null ],
     [ "run_test_steps", "porting__assistant_8c.html#ac7c23a3495071e5795d7720887167666", null ],
+    [ "test_step_benchmark_cpu_mem_stack_perf", "porting__assistant_8c.html#a659e79d59c47b50885f225c4f29431d8", null ],
     [ "test_step_bulk_write_read", "porting__assistant_8c.html#a75e008674a87e3eb2fb3d227d982ffb0", null ],
     [ "test_step_mmhal_wlan_hard_reset", "porting__assistant_8c.html#aa5ba534559ea01f2b5d522508189e15e", null ],
     [ "test_step_mmhal_wlan_init", "porting__assistant_8c.html#ae7e4e54271f9f691de54d84661d7dbd4", null ],

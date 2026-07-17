@@ -1,10 +1,10 @@
 var MMPLATFORMS =
 [
-    [ "MM8108 platforms", "MMPLATFORMS.html#autotoc_md55", [
+    [ "MM8108 platforms", "MMPLATFORMS.html#autotoc_md48", [
       [ "MM8108-EKH05-01 Platform (mm-mm8108-ekh05)", "MMPLATFORMS.html#mm-mm8108-ekh05", null ],
       [ "MM8108-EKH08-01 with WB55 Platform (mm-ekh18-wb55)", "MMPLATFORMS.html#mm-ekh18-wb55", null ]
     ] ],
-    [ "MM6108 platforms", "MMPLATFORMS.html#autotoc_md56", [
+    [ "MM6108 platforms", "MMPLATFORMS.html#autotoc_md49", [
       [ "MM6108-EKH05-05US Platform (mm-mm6108-ekh05)", "MMPLATFORMS.html#mm-mm6108-ekh05", null ],
       [ "MM6108-EKH08-05US-02 Platform (mm-ekh08-u575)", "MMPLATFORMS.html#mm-ekh08-u575", null ],
       [ "MM6108-EKH08-05US-01 Platform (mm-ekh08-wb55)", "MMPLATFORMS.html#mm-ekh08-wb55", null ],

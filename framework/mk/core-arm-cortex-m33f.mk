@@ -5,7 +5,7 @@
 #
 
 # Configure the toolchain
-TOOLCHAIN_VERSION ?= 10.3-2021.07
+TOOLCHAIN_VERSION ?= 14.2.1-1.1
 
 # Try to find the toolchain if not already specified
 #ifeq ($(TOOLCHAIN_DIR),)

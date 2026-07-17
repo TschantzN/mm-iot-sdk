@@ -30,7 +30,7 @@
   <td id="projectlogo"><img alt="Logo" src="logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Morse Micro IoT SDK
-   &#160;<span id="projectnumber">2.10.4</span>
+   &#160;<span id="projectnumber">2.12.3</span>
    </div>
   </td>
  </tr>
@@ -94,9 +94,9 @@ $(document).ready(function(){initNavTree('structmmwlan__dpp__cb__args.html','');
 <div class="contents">
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >Structure passed back when a DPP event occurs. </p>
-<dl class="section warning"><dt>Warning</dt><dd>BETA NOTICE: This is beta API that is under development; breaking changes may be introduced in future releases. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>BETA NOTICE: This is a beta API that is under development; breaking changes may be introduced in future releases. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="mmwlan_8h_source.html#l02156">2156</a> of file <a class="el" href="mmwlan_8h_source.html">mmwlan.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mmwlan_8h_source.html#l01686">1686</a> of file <a class="el" href="mmwlan_8h_source.html">mmwlan.h</a>.</p>
 </div>
 <p><code>#include &lt;<a class="el" href="mmwlan_8h_source.html">mmwlan.h</a>&gt;</code></p>
 <table class="memberdecls">
@@ -112,18 +112,63 @@ union {</td></tr>
 <tr class="memitem:ad5293e4a97a0fd3b03d5fc819ba38334"><td class="memItemLeft" >&#160;&#160;&#160;&#160;&#160;&#160;enum <a class="el" href="group__MMWLAN__DPP.html#gade954a79247b07a1737c72f34e2697ea">mmwlan_dpp_pb_result</a>&#160;&#160;&#160;<a class="el" href="structmmwlan__dpp__cb__args.html#abf4a9352e8bd4b846461ae113e9b2921">result</a></td></tr>
 <tr class="memdesc:ad5293e4a97a0fd3b03d5fc819ba38334"><td class="mdescLeft">&#160;</td><td class="mdescRight">Result of DPP push button.  <a href="structmmwlan__dpp__cb__args.html#abf4a9352e8bd4b846461ae113e9b2921">More...</a><br /></td></tr>
 <tr class="separator:ad5293e4a97a0fd3b03d5fc819ba38334"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3e72717962c60b81fb66b84449854dfb"><td class="memItemLeft" >&#160;&#160;&#160;&#160;&#160;&#160;const uint8_t *&#160;&#160;&#160;<a class="el" href="structmmwlan__dpp__cb__args.html#a098b37c9cbab1fc893f960103174b84e">ssid</a></td></tr>
-<tr class="memdesc:a3e72717962c60b81fb66b84449854dfb"><td class="mdescLeft">&#160;</td><td class="mdescRight">SSID of the AP to connect to.  <a href="structmmwlan__dpp__cb__args.html#a098b37c9cbab1fc893f960103174b84e">More...</a><br /></td></tr>
-<tr class="separator:a3e72717962c60b81fb66b84449854dfb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a06327f0cb1756b6a547d40bb3afe1220"><td class="memItemLeft" >&#160;&#160;&#160;&#160;&#160;&#160;uint16_t&#160;&#160;&#160;<a class="el" href="structmmwlan__dpp__cb__args.html#a8f7bdd888e29a6bb5c8be2cc26a82f6f">ssid_len</a></td></tr>
-<tr class="memdesc:a06327f0cb1756b6a547d40bb3afe1220"><td class="mdescLeft">&#160;</td><td class="mdescRight">Length of the SSID.  <a href="structmmwlan__dpp__cb__args.html#a8f7bdd888e29a6bb5c8be2cc26a82f6f">More...</a><br /></td></tr>
-<tr class="separator:a06327f0cb1756b6a547d40bb3afe1220"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0a626bf0d1cb48fae4b84847f0e44586"><td class="memItemLeft" >&#160;&#160;&#160;&#160;&#160;&#160;const char *&#160;&#160;&#160;<a class="el" href="structmmwlan__dpp__cb__args.html#a9f7384bfd6b53adddb5f8c97eece24d2">passphrase</a></td></tr>
-<tr class="memdesc:a0a626bf0d1cb48fae4b84847f0e44586"><td class="mdescLeft">&#160;</td><td class="mdescRight">Passphrase, NULL terminated.  <a href="structmmwlan__dpp__cb__args.html#a9f7384bfd6b53adddb5f8c97eece24d2">More...</a><br /></td></tr>
-<tr class="separator:a0a626bf0d1cb48fae4b84847f0e44586"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4f225f0759624ab9968a9f58dd0ee7a3"><td class="memItemLeft" valign="top">&#160;&#160;&#160;}&#160;&#160;&#160;<b>pb_result</b></td></tr>
 <tr class="memdesc:a4f225f0759624ab9968a9f58dd0ee7a3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Argument for <code>MMWLAN_DPP_EVT_PB_RESULT</code> event. <br /></td></tr>
 <tr class="separator:a4f225f0759624ab9968a9f58dd0ee7a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a48845f427d5ab270fb052bc9c050c38f"><td class="memItemLeft" >
+&#160;&#160;&#160;struct {</td></tr>
+<tr class="memitem:a4c399791840fefa2300b9b5dcccb246a"><td class="memItemLeft" >&#160;&#160;&#160;&#160;&#160;&#160;const uint8_t *&#160;&#160;&#160;<a class="el" href="structmmwlan__dpp__cb__args.html#a098b37c9cbab1fc893f960103174b84e">ssid</a></td></tr>
+<tr class="memdesc:a4c399791840fefa2300b9b5dcccb246a"><td class="mdescLeft">&#160;</td><td class="mdescRight">SSID of the AP to connect to.  <a href="structmmwlan__dpp__cb__args.html#a098b37c9cbab1fc893f960103174b84e">More...</a><br /></td></tr>
+<tr class="separator:a4c399791840fefa2300b9b5dcccb246a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afd9cb75bfc09531a6b5ab6f60b7b62e0"><td class="memItemLeft" >&#160;&#160;&#160;&#160;&#160;&#160;uint16_t&#160;&#160;&#160;<a class="el" href="structmmwlan__dpp__cb__args.html#a8f7bdd888e29a6bb5c8be2cc26a82f6f">ssid_len</a></td></tr>
+<tr class="memdesc:afd9cb75bfc09531a6b5ab6f60b7b62e0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Length of the SSID.  <a href="structmmwlan__dpp__cb__args.html#a8f7bdd888e29a6bb5c8be2cc26a82f6f">More...</a><br /></td></tr>
+<tr class="separator:afd9cb75bfc09531a6b5ab6f60b7b62e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa011866091263fe9a933b98f28a1440d"><td class="memItemLeft" >&#160;&#160;&#160;&#160;&#160;&#160;const char *&#160;&#160;&#160;<a class="el" href="structmmwlan__dpp__cb__args.html#a9f7384bfd6b53adddb5f8c97eece24d2">passphrase</a></td></tr>
+<tr class="memdesc:aa011866091263fe9a933b98f28a1440d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Passphrase, NULL terminated.  <a href="structmmwlan__dpp__cb__args.html#a9f7384bfd6b53adddb5f8c97eece24d2">More...</a><br /></td></tr>
+<tr class="separator:aa011866091263fe9a933b98f28a1440d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a48845f427d5ab270fb052bc9c050c38f"><td class="memItemLeft" valign="top">&#160;&#160;&#160;}&#160;&#160;&#160;<b>conf_received</b></td></tr>
+<tr class="memdesc:a48845f427d5ab270fb052bc9c050c38f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Argument for <code>MMWLAN_DPP_EVT_CONF_RECEIVED</code> event. <br /></td></tr>
+<tr class="separator:a48845f427d5ab270fb052bc9c050c38f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a270d7c72ed8dd66e5c95c09dcb3dc668"><td class="memItemLeft" >
+&#160;&#160;&#160;struct {</td></tr>
+<tr class="memitem:a3e2674cf29a752cfad0e283c56060b19"><td class="memItemLeft" >&#160;&#160;&#160;&#160;&#160;&#160;const uint8_t *&#160;&#160;&#160;<a class="el" href="structmmwlan__dpp__cb__args.html#a6aae195e59c7718b61e6bf5395243c06">peer_mac</a></td></tr>
+<tr class="memdesc:a3e2674cf29a752cfad0e283c56060b19"><td class="mdescLeft">&#160;</td><td class="mdescRight">MAC address of the discovered PB configurator.  <a href="structmmwlan__dpp__cb__args.html#a6aae195e59c7718b61e6bf5395243c06">More...</a><br /></td></tr>
+<tr class="separator:a3e2674cf29a752cfad0e283c56060b19"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a270d7c72ed8dd66e5c95c09dcb3dc668"><td class="memItemLeft" valign="top">&#160;&#160;&#160;}&#160;&#160;&#160;<b>pb_discovery</b></td></tr>
+<tr class="memdesc:a270d7c72ed8dd66e5c95c09dcb3dc668"><td class="mdescLeft">&#160;</td><td class="mdescRight">Argument for <code>MMWLAN_DPP_EVT_PB_DISCOVERY</code> event. <br /></td></tr>
+<tr class="separator:a270d7c72ed8dd66e5c95c09dcb3dc668"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad92f5a0b14824eb32724b68a3ac65aab"><td class="memItemLeft" >
+&#160;&#160;&#160;struct {</td></tr>
+<tr class="memitem:abeb27dd9c4da52c59e6ed9fb73b204e0"><td class="memItemLeft" >&#160;&#160;&#160;&#160;&#160;&#160;const uint8_t *&#160;&#160;&#160;<a class="el" href="structmmwlan__dpp__cb__args.html#a6aae195e59c7718b61e6bf5395243c06">peer_mac</a></td></tr>
+<tr class="memdesc:abeb27dd9c4da52c59e6ed9fb73b204e0"><td class="mdescLeft">&#160;</td><td class="mdescRight">MAC address of the configurator that sent the authentication request.  <a href="structmmwlan__dpp__cb__args.html#a6aae195e59c7718b61e6bf5395243c06">More...</a><br /></td></tr>
+<tr class="separator:abeb27dd9c4da52c59e6ed9fb73b204e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad92f5a0b14824eb32724b68a3ac65aab"><td class="memItemLeft" valign="top">&#160;&#160;&#160;}&#160;&#160;&#160;<b>auth_req_rx</b></td></tr>
+<tr class="memdesc:ad92f5a0b14824eb32724b68a3ac65aab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Argument for <code>MMWLAN_DPP_EVT_AUTH_REQ_RX</code> event. <br /></td></tr>
+<tr class="separator:ad92f5a0b14824eb32724b68a3ac65aab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9d08e845d77ca042d72261e7e21852db"><td class="memItemLeft" >
+&#160;&#160;&#160;struct {</td></tr>
+<tr class="memitem:a97a1d0b126f7e4c660650133ae9f7f00"><td class="memItemLeft" >&#160;&#160;&#160;&#160;&#160;&#160;bool&#160;&#160;&#160;<a class="el" href="structmmwlan__dpp__cb__args.html#a4fea8d20f215202f4b0c363530478c46">initiator</a></td></tr>
+<tr class="memdesc:a97a1d0b126f7e4c660650133ae9f7f00"><td class="mdescLeft">&#160;</td><td class="mdescRight"><code>true</code> if this device initiated the authentication exchange, <code>false</code> if it responded.  <a href="structmmwlan__dpp__cb__args.html#a4fea8d20f215202f4b0c363530478c46">More...</a><br /></td></tr>
+<tr class="separator:a97a1d0b126f7e4c660650133ae9f7f00"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9d08e845d77ca042d72261e7e21852db"><td class="memItemLeft" valign="top">&#160;&#160;&#160;}&#160;&#160;&#160;<b>auth_success</b></td></tr>
+<tr class="memdesc:a9d08e845d77ca042d72261e7e21852db"><td class="mdescLeft">&#160;</td><td class="mdescRight">Argument for <code>MMWLAN_DPP_EVT_AUTH_SUCCESS</code> event. <br /></td></tr>
+<tr class="separator:a9d08e845d77ca042d72261e7e21852db"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9f07d0bc4b2079a0ddcd59fea39fd5a6"><td class="memItemLeft" >
+&#160;&#160;&#160;struct {</td></tr>
+<tr class="memitem:a8324630b23334161a388575db33dfdf3"><td class="memItemLeft" >&#160;&#160;&#160;&#160;&#160;&#160;enum <a class="el" href="group__MMWLAN__DPP.html#ga00e0a89275dbc735120d254d18a38412">mmwlan_dpp_auth_failure_reason</a>&#160;&#160;&#160;<a class="el" href="structmmwlan__dpp__cb__args.html#a9897b5d4a92e898f3d872a3e558a1850">reason</a></td></tr>
+<tr class="memdesc:a8324630b23334161a388575db33dfdf3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reason for the authentication failure.  <a href="structmmwlan__dpp__cb__args.html#a9897b5d4a92e898f3d872a3e558a1850">More...</a><br /></td></tr>
+<tr class="separator:a8324630b23334161a388575db33dfdf3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9f07d0bc4b2079a0ddcd59fea39fd5a6"><td class="memItemLeft" valign="top">&#160;&#160;&#160;}&#160;&#160;&#160;<b>auth_failure</b></td></tr>
+<tr class="memdesc:a9f07d0bc4b2079a0ddcd59fea39fd5a6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Argument for <code>MMWLAN_DPP_EVT_AUTH_FAILURE</code> event. <br /></td></tr>
+<tr class="separator:a9f07d0bc4b2079a0ddcd59fea39fd5a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab7f17fa9c3381b9593f3954fae6e03d9"><td class="memItemLeft" >
+&#160;&#160;&#160;struct {</td></tr>
+<tr class="memitem:a48299ae1e92424604061e1086650a188"><td class="memItemLeft" >&#160;&#160;&#160;&#160;&#160;&#160;enum <a class="el" href="group__MMWLAN__DPP.html#ga3e1c76073c3bd60b1f8a1420c0c55d2c">mmwlan_dpp_conf_failure_reason</a>&#160;&#160;&#160;<a class="el" href="structmmwlan__dpp__cb__args.html#a75f72de217ccf90fe030b4b0228014fd">reason</a></td></tr>
+<tr class="memdesc:a48299ae1e92424604061e1086650a188"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reason for the configuration failure.  <a href="structmmwlan__dpp__cb__args.html#a75f72de217ccf90fe030b4b0228014fd">More...</a><br /></td></tr>
+<tr class="separator:a48299ae1e92424604061e1086650a188"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab7f17fa9c3381b9593f3954fae6e03d9"><td class="memItemLeft" valign="top">&#160;&#160;&#160;}&#160;&#160;&#160;<b>conf_failed</b></td></tr>
+<tr class="memdesc:ab7f17fa9c3381b9593f3954fae6e03d9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Argument for <code>MMWLAN_DPP_EVT_CONF_FAILED</code> event. <br /></td></tr>
+<tr class="separator:ab7f17fa9c3381b9593f3954fae6e03d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a02f8dc30ca3410a73f8ab26e190a28be"><td class="memItemLeft" valign="top">}&#160;</td><td class="memItemRight" valign="bottom"><b>args</b></td></tr>
 <tr class="memdesc:a02f8dc30ca3410a73f8ab26e190a28be"><td class="mdescLeft">&#160;</td><td class="mdescRight">Union of arguments for DPP events. <br /></td></tr>
 <tr class="separator:a02f8dc30ca3410a73f8ab26e190a28be"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -143,7 +188,25 @@ union {</td></tr>
 
 <p>The DPP event that has occurred. </p>
 
-<p class="definition">Definition at line <a class="el" href="mmwlan_8h_source.html#l02159">2159</a> of file <a class="el" href="mmwlan_8h_source.html">mmwlan.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mmwlan_8h_source.html#l01689">1689</a> of file <a class="el" href="mmwlan_8h_source.html">mmwlan.h</a>.</p>
+
+</div>
+</div>
+<a id="a4fea8d20f215202f4b0c363530478c46" name="a4fea8d20f215202f4b0c363530478c46"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4fea8d20f215202f4b0c363530478c46">&#9670;&nbsp;</a></span>initiator</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool mmwlan_dpp_cb_args::initiator</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><code>true</code> if this device initiated the authentication exchange, <code>false</code> if it responded. </p>
+
+<p class="definition">Definition at line <a class="el" href="mmwlan_8h_source.html#l01732">1732</a> of file <a class="el" href="mmwlan_8h_source.html">mmwlan.h</a>.</p>
 
 </div>
 </div>
@@ -162,7 +225,63 @@ union {</td></tr>
 <p>Passphrase, NULL terminated. </p>
 <p >May be <code>NULL</code>. </p>
 
-<p class="definition">Definition at line <a class="el" href="mmwlan_8h_source.html#l02174">2174</a> of file <a class="el" href="mmwlan_8h_source.html">mmwlan.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mmwlan_8h_source.html#l01709">1709</a> of file <a class="el" href="mmwlan_8h_source.html">mmwlan.h</a>.</p>
+
+</div>
+</div>
+<a id="a6aae195e59c7718b61e6bf5395243c06" name="a6aae195e59c7718b61e6bf5395243c06"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6aae195e59c7718b61e6bf5395243c06">&#9670;&nbsp;</a></span>peer_mac</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const uint8_t* mmwlan_dpp_cb_args::peer_mac</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>MAC address of the discovered PB configurator. </p>
+<p >MAC address of the configurator that sent the authentication request.</p>
+<p >Valid for callback duration only. </p>
+
+<p class="definition">Definition at line <a class="el" href="mmwlan_8h_source.html#l01716">1716</a> of file <a class="el" href="mmwlan_8h_source.html">mmwlan.h</a>.</p>
+
+</div>
+</div>
+<a id="a9897b5d4a92e898f3d872a3e558a1850" name="a9897b5d4a92e898f3d872a3e558a1850"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9897b5d4a92e898f3d872a3e558a1850">&#9670;&nbsp;</a></span>reason <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="group__MMWLAN__DPP.html#ga00e0a89275dbc735120d254d18a38412">mmwlan_dpp_auth_failure_reason</a> mmwlan_dpp_cb_args::reason</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Reason for the authentication failure. </p>
+
+<p class="definition">Definition at line <a class="el" href="mmwlan_8h_source.html#l01739">1739</a> of file <a class="el" href="mmwlan_8h_source.html">mmwlan.h</a>.</p>
+
+</div>
+</div>
+<a id="a75f72de217ccf90fe030b4b0228014fd" name="a75f72de217ccf90fe030b4b0228014fd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a75f72de217ccf90fe030b4b0228014fd">&#9670;&nbsp;</a></span>reason <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="group__MMWLAN__DPP.html#ga3e1c76073c3bd60b1f8a1420c0c55d2c">mmwlan_dpp_conf_failure_reason</a> mmwlan_dpp_cb_args::reason</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Reason for the configuration failure. </p>
+
+<p class="definition">Definition at line <a class="el" href="mmwlan_8h_source.html#l01746">1746</a> of file <a class="el" href="mmwlan_8h_source.html">mmwlan.h</a>.</p>
 
 </div>
 </div>
@@ -180,7 +299,7 @@ union {</td></tr>
 
 <p>Result of DPP push button. </p>
 
-<p class="definition">Definition at line <a class="el" href="mmwlan_8h_source.html#l02168">2168</a> of file <a class="el" href="mmwlan_8h_source.html">mmwlan.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mmwlan_8h_source.html#l01698">1698</a> of file <a class="el" href="mmwlan_8h_source.html">mmwlan.h</a>.</p>
 
 </div>
 </div>
@@ -197,9 +316,9 @@ union {</td></tr>
 </div><div class="memdoc">
 
 <p>SSID of the AP to connect to. </p>
-<p >May be <code>NUlL</code>. </p>
+<p >May be <code>NULL</code>. </p>
 
-<p class="definition">Definition at line <a class="el" href="mmwlan_8h_source.html#l02170">2170</a> of file <a class="el" href="mmwlan_8h_source.html">mmwlan.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mmwlan_8h_source.html#l01705">1705</a> of file <a class="el" href="mmwlan_8h_source.html">mmwlan.h</a>.</p>
 
 </div>
 </div>
@@ -217,7 +336,7 @@ union {</td></tr>
 
 <p>Length of the SSID. </p>
 
-<p class="definition">Definition at line <a class="el" href="mmwlan_8h_source.html#l02172">2172</a> of file <a class="el" href="mmwlan_8h_source.html">mmwlan.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mmwlan_8h_source.html#l01707">1707</a> of file <a class="el" href="mmwlan_8h_source.html">mmwlan.h</a>.</p>
 
 </div>
 </div>

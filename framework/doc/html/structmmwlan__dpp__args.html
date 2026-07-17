@@ -30,7 +30,7 @@
   <td id="projectlogo"><img alt="Logo" src="logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Morse Micro IoT SDK
-   &#160;<span id="projectnumber">2.10.4</span>
+   &#160;<span id="projectnumber">2.12.3</span>
    </div>
   </td>
  </tr>
@@ -94,9 +94,9 @@ $(document).ready(function(){initNavTree('structmmwlan__dpp__args.html',''); ini
 <div class="contents">
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >Structure to hold the arguments used for the DPP process. </p>
-<dl class="section warning"><dt>Warning</dt><dd>BETA NOTICE: This is beta API that is under development; breaking changes may be introduced in future releases. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>BETA NOTICE: This is a beta API that is under development; breaking changes may be introduced in future releases. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="mmwlan_8h_source.html#l02185">2185</a> of file <a class="el" href="mmwlan_8h_source.html">mmwlan.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mmwlan_8h_source.html#l01807">1807</a> of file <a class="el" href="mmwlan_8h_source.html">mmwlan.h</a>.</p>
 </div>
 <p><code>#include &lt;<a class="el" href="mmwlan_8h_source.html">mmwlan.h</a>&gt;</code></p>
 <table class="memberdecls">
@@ -108,6 +108,12 @@ Data Fields</h2></td></tr>
 <tr class="memitem:a64edddfc8829d6f563dfdbc6171a61be"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmmwlan__dpp__args.html#a64edddfc8829d6f563dfdbc6171a61be">dpp_event_cb_arg</a></td></tr>
 <tr class="memdesc:a64edddfc8829d6f563dfdbc6171a61be"><td class="mdescLeft">&#160;</td><td class="mdescRight">Optional user argument that will be passed back to the DPP event callback.  <a href="structmmwlan__dpp__args.html#a64edddfc8829d6f563dfdbc6171a61be">More...</a><br /></td></tr>
 <tr class="separator:a64edddfc8829d6f563dfdbc6171a61be"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a76ce5fa97554c1b225b73e12ac333407"><td class="memItemLeft" align="right" valign="top">enum <a class="el" href="group__MMWLAN__DPP.html#ga2017f481949e83bf6bc2fad05608cf35">mmwlan_dpp_mode</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmmwlan__dpp__args.html#a76ce5fa97554c1b225b73e12ac333407">mode</a></td></tr>
+<tr class="memdesc:a76ce5fa97554c1b225b73e12ac333407"><td class="mdescLeft">&#160;</td><td class="mdescRight">DPP mode to use.  <a href="structmmwlan__dpp__args.html#a76ce5fa97554c1b225b73e12ac333407">More...</a><br /></td></tr>
+<tr class="separator:a76ce5fa97554c1b225b73e12ac333407"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab8ae8ec977dda59fcccfd1efab8f0c96"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structmmwlan__dpp__qr__args.html">mmwlan_dpp_qr_args</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmmwlan__dpp__args.html#ab8ae8ec977dda59fcccfd1efab8f0c96">qr</a></td></tr>
+<tr class="memdesc:ab8ae8ec977dda59fcccfd1efab8f0c96"><td class="mdescLeft">&#160;</td><td class="mdescRight">QR enrollee specific arguments.  <a href="structmmwlan__dpp__args.html#ab8ae8ec977dda59fcccfd1efab8f0c96">More...</a><br /></td></tr>
+<tr class="separator:ab8ae8ec977dda59fcccfd1efab8f0c96"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Field Documentation</h2>
 <a id="a352fc8437ab40b1486ad4086a7043e8d" name="a352fc8437ab40b1486ad4086a7043e8d"></a>
@@ -124,7 +130,7 @@ Data Fields</h2></td></tr>
 
 <p>DPP event callback prototype. </p>
 
-<p class="definition">Definition at line <a class="el" href="mmwlan_8h_source.html#l02188">2188</a> of file <a class="el" href="mmwlan_8h_source.html">mmwlan.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mmwlan_8h_source.html#l01810">1810</a> of file <a class="el" href="mmwlan_8h_source.html">mmwlan.h</a>.</p>
 
 </div>
 </div>
@@ -142,7 +148,44 @@ Data Fields</h2></td></tr>
 
 <p>Optional user argument that will be passed back to the DPP event callback. </p>
 
-<p class="definition">Definition at line <a class="el" href="mmwlan_8h_source.html#l02190">2190</a> of file <a class="el" href="mmwlan_8h_source.html">mmwlan.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mmwlan_8h_source.html#l01812">1812</a> of file <a class="el" href="mmwlan_8h_source.html">mmwlan.h</a>.</p>
+
+</div>
+</div>
+<a id="a76ce5fa97554c1b225b73e12ac333407" name="a76ce5fa97554c1b225b73e12ac333407"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a76ce5fa97554c1b225b73e12ac333407">&#9670;&nbsp;</a></span>mode</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="group__MMWLAN__DPP.html#ga2017f481949e83bf6bc2fad05608cf35">mmwlan_dpp_mode</a> mmwlan_dpp_args::mode</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>DPP mode to use. </p>
+
+<p class="definition">Definition at line <a class="el" href="mmwlan_8h_source.html#l01814">1814</a> of file <a class="el" href="mmwlan_8h_source.html">mmwlan.h</a>.</p>
+
+</div>
+</div>
+<a id="ab8ae8ec977dda59fcccfd1efab8f0c96" name="ab8ae8ec977dda59fcccfd1efab8f0c96"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab8ae8ec977dda59fcccfd1efab8f0c96">&#9670;&nbsp;</a></span>qr</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">struct <a class="el" href="structmmwlan__dpp__qr__args.html">mmwlan_dpp_qr_args</a> mmwlan_dpp_args::qr</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>QR enrollee specific arguments. </p>
+<p >Only used when <code>mode</code> is <code>MMWLAN_DPP_MODE_QR_ENROLLEE</code>. </p>
+
+<p class="definition">Definition at line <a class="el" href="mmwlan_8h_source.html#l01816">1816</a> of file <a class="el" href="mmwlan_8h_source.html">mmwlan.h</a>.</p>
 
 </div>
 </div>
