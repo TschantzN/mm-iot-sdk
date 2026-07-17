@@ -43,7 +43,7 @@
         /* The 2 letter country code to ensure the correct regulatory domain is used */
         "wlan.country_code": "US",
         
-        "wlan.channel": "30",
+        "wlan.channel": "28",
 
         /* If true use DHCP, else the static IP configuration will be used */
         "ip.dhcp_enabled": "false"
