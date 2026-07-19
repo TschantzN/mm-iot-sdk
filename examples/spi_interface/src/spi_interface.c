@@ -50,11 +50,11 @@ static void link_status_callback(const struct mmipal_link_status *link_status)
 
 
 
-static void udp_broadcast_tx_start(struct udp_pcb *pcb)
+static void udp_unicast_tx_start(struct udp_pcb *pcb)
 {
     //err_t err;
 
-    ip_set_option(pcb, SOF_BROADCAST);
+    //ip_set_option(pcb, SOF_BROADCAST);
     ip_addr_t dest_ip;
     IP4_ADDR(ip_2_ip4(&dest_ip), 192, 168, 12, 10);
 
@@ -127,7 +127,7 @@ static struct udp_pcb *init_udp_pcb(void)
 
 void SPI_Slave_Init(void)
 {
-    // 1. Activer les horloges du SPI1, du Port E(SPI) et port D (Spare GPIO)(go no go jetson)
+    // 1. Activer les horloges du SPI1, du Port E(SPI) et port D (Spare GPIO)
     __HAL_RCC_SPI1_CLK_ENABLE();
     __HAL_RCC_GPIOE_CLK_ENABLE();
     __HAL_RCC_GPIOD_CLK_ENABLE();
@@ -139,7 +139,7 @@ void SPI_Slave_Init(void)
     GPIO_InitStruct.Pull = GPIO_NOPULL;
     GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_HIGH;
 
-    GPIO_InitStruct.Alternate = GPIO_AF5_SPI1; // Sur U5, Port E = SPI1 (AF5) !
+    GPIO_InitStruct.Alternate = GPIO_AF5_SPI1; // Sur U5, Port E = SPI1 (AF5)
     HAL_GPIO_Init(GPIOE, &GPIO_InitStruct);
 
     // Config SPI1
@@ -164,7 +164,6 @@ void SPI_Slave_Init(void)
         printf("SPI Esclave (SPI1) initialise sur PE12 a PE15 !\n");
     }
 
-        // --- LES 2 LIGNES MANQUANTES POUR LE MODE '_IT' --- mode IT ?
 	HAL_NVIC_SetPriority(SPI1_IRQn, 5, 0);
 	HAL_NVIC_EnableIRQ(SPI1_IRQn);
 
@@ -240,6 +239,6 @@ void app_init(void)
     struct udp_pcb *pcb = init_udp_pcb();
     if (pcb != NULL) {
     	pcb->tos = 0xC0;
-        udp_broadcast_tx_start(pcb);
+        udp_unicast_tx_start(pcb);
     }
 }

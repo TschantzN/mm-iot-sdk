@@ -49,7 +49,7 @@
         "ip.dhcp_enabled": "false"
 
         /* These settings are ignored if DHCP is used, but mandatory if using static IP */
-		"ip.address": "192.168.12.50",
+		"ip.address": "192.168.12.2",
 		"ip.netmask": "255.255.255.0",
 		"ip.gateway": "192.168.12.255",
 		//"ip.gateway": "255.255.255.255",
