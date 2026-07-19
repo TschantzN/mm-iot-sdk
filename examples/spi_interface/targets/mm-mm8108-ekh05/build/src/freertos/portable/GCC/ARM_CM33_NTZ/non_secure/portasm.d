@@ -18,7 +18,8 @@ build/src/freertos/portable/GCC/ARM_CM33_NTZ/non_secure/portasm.o: \
  ../../../../framework/src/freertos/portable/GCC/ARM_CM33_NTZ/non_secure/portmacro.h \
  ../../../../framework/src/freertos/portable/GCC/ARM_CM33_NTZ/non_secure/portmacrocommon.h \
  ../../../../framework/src/freertos/include/mpu_wrappers.h \
- ../../../../framework/src/freertos/include/mpu_wrappers.h
+ ../../../../framework/src/freertos/include/mpu_wrappers.h \
+ ../../../../framework/src/freertos/include/mpu_syscall_numbers.h
 ../../../../framework/src/bsps/stm32cubeu5/Drivers/CMSIS/Device/ST/STM32U5xx/Include/stm32u585xx.h:
 ../../../../framework/src/bsps/stm32cubeu5/Drivers/CMSIS/Include/core_cm33.h:
 ../../../../framework/src/bsps/stm32cubeu5/Drivers/CMSIS/Include/cmsis_version.h:
@@ -38,3 +39,4 @@ build/src/freertos/portable/GCC/ARM_CM33_NTZ/non_secure/portasm.o: \
 ../../../../framework/src/freertos/portable/GCC/ARM_CM33_NTZ/non_secure/portmacrocommon.h:
 ../../../../framework/src/freertos/include/mpu_wrappers.h:
 ../../../../framework/src/freertos/include/mpu_wrappers.h:
+../../../../framework/src/freertos/include/mpu_syscall_numbers.h:

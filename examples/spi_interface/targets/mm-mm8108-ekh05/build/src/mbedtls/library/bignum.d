@@ -21,13 +21,13 @@ build/src/mbedtls/library/bignum.o: \
  ../../../../framework/src/mbedtls/library/alignment.h \
  ../../../../framework/src/mbedtls/include/mbedtls/bignum.h \
  ../../../../framework/src/mbedtls/include/mbedtls/private_access.h \
+ ../../../../framework/src/mbedtls/include/mbedtls/platform_util.h \
+ ../../../../framework/src/mbedtls/include/mbedtls/platform_time.h \
  ../../../../framework/src/mbedtls/library/bignum_core.h \
  ../../../../framework/src/mbedtls/library/constant_time_internal.h \
  ../../../../framework/src/mbedtls/library/constant_time_impl.h \
  ../../../../framework/src/mbedtls/library/bignum_internal.h \
  ../../../../framework/src/mbedtls/library/bn_mul.h \
- ../../../../framework/src/mbedtls/include/mbedtls/platform_util.h \
- ../../../../framework/src/mbedtls/include/mbedtls/platform_time.h \
  ../../../../framework/src/mbedtls/include/mbedtls/error.h \
  ../../../../framework/src/mbedtls/include/mbedtls/platform.h
 ../../../../framework/src/bsps/stm32cubeu5/Drivers/CMSIS/Device/ST/STM32U5xx/Include/stm32u585xx.h:
@@ -51,12 +51,12 @@ build/src/mbedtls/library/bignum.o: \
 ../../../../framework/src/mbedtls/library/alignment.h:
 ../../../../framework/src/mbedtls/include/mbedtls/bignum.h:
 ../../../../framework/src/mbedtls/include/mbedtls/private_access.h:
+../../../../framework/src/mbedtls/include/mbedtls/platform_util.h:
+../../../../framework/src/mbedtls/include/mbedtls/platform_time.h:
 ../../../../framework/src/mbedtls/library/bignum_core.h:
 ../../../../framework/src/mbedtls/library/constant_time_internal.h:
 ../../../../framework/src/mbedtls/library/constant_time_impl.h:
 ../../../../framework/src/mbedtls/library/bignum_internal.h:
 ../../../../framework/src/mbedtls/library/bn_mul.h:
-../../../../framework/src/mbedtls/include/mbedtls/platform_util.h:
-../../../../framework/src/mbedtls/include/mbedtls/platform_time.h:
 ../../../../framework/src/mbedtls/include/mbedtls/error.h:
 ../../../../framework/src/mbedtls/include/mbedtls/platform.h:

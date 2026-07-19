@@ -53,8 +53,11 @@ build/src/platforms/mm-mm8108-ekh05/bsp/Core/Src/stm32u5xx_it.o: \
  ../../../../framework/src/bsps/stm32cubeu5/Drivers/STM32U5xx_HAL_Driver/Inc/stm32u5xx_ll_pwr.h \
  ../../../../framework/src/platforms/mm-mm8108-ekh05/bsp/Core/Inc/stm32u5xx_it.h \
  ../../../../framework/morselib/include/mmhal_os.h \
+ ../../../../framework/morselib/include/mmhal_wlan.h \
+ ../../../../framework/morselib/include/mmpkt.h \
  ../../../../framework/morselib/include/mmosal.h \
- ../../../../framework/src/platforms/mm-mm8108-ekh05/mm_shims/mmport.h
+ ../../../../framework/src/platforms/mm-mm8108-ekh05/mm_shims/mmport.h \
+ ../../../../framework/morselib/include/mmwlan.h
 ../../../../framework/src/bsps/stm32cubeu5/Drivers/CMSIS/Device/ST/STM32U5xx/Include/stm32u585xx.h:
 ../../../../framework/src/bsps/stm32cubeu5/Drivers/CMSIS/Include/core_cm33.h:
 ../../../../framework/src/bsps/stm32cubeu5/Drivers/CMSIS/Include/cmsis_version.h:
@@ -108,5 +111,8 @@ build/src/platforms/mm-mm8108-ekh05/bsp/Core/Src/stm32u5xx_it.o: \
 ../../../../framework/src/bsps/stm32cubeu5/Drivers/STM32U5xx_HAL_Driver/Inc/stm32u5xx_ll_pwr.h:
 ../../../../framework/src/platforms/mm-mm8108-ekh05/bsp/Core/Inc/stm32u5xx_it.h:
 ../../../../framework/morselib/include/mmhal_os.h:
+../../../../framework/morselib/include/mmhal_wlan.h:
+../../../../framework/morselib/include/mmpkt.h:
 ../../../../framework/morselib/include/mmosal.h:
 ../../../../framework/src/platforms/mm-mm8108-ekh05/mm_shims/mmport.h:
+../../../../framework/morselib/include/mmwlan.h:

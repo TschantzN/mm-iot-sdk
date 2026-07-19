@@ -13,6 +13,7 @@ build/src/lwip/src/api/tcpip.o: \
  ../../../../framework/src/platforms/mm-mm8108-ekh05/mm_shims/mmport.h \
  ../../../../framework/morselib/include/mmhal_core.h \
  ../../../../framework/src/mmipal/mmipal.h \
+ ../../../../framework/morselib/include/mmlog.h \
  ../../../../framework/src/lwip/port/arch/sys_arch.h \
  ../../../../framework/morselib/include/mmhal_app.h \
  ../../../../framework/morselib/include/mmhal_os.h \
@@ -61,6 +62,7 @@ build/src/lwip/src/api/tcpip.o: \
 ../../../../framework/src/platforms/mm-mm8108-ekh05/mm_shims/mmport.h:
 ../../../../framework/morselib/include/mmhal_core.h:
 ../../../../framework/src/mmipal/mmipal.h:
+../../../../framework/morselib/include/mmlog.h:
 ../../../../framework/src/lwip/port/arch/sys_arch.h:
 ../../../../framework/morselib/include/mmhal_app.h:
 ../../../../framework/morselib/include/mmhal_os.h:

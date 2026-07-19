@@ -13,6 +13,7 @@ build/src/lwip/src/core/memp.o: \
  ../../../../framework/src/platforms/mm-mm8108-ekh05/mm_shims/mmport.h \
  ../../../../framework/morselib/include/mmhal_core.h \
  ../../../../framework/src/mmipal/mmipal.h \
+ ../../../../framework/morselib/include/mmlog.h \
  ../../../../framework/src/lwip/port/arch/sys_arch.h \
  ../../../../framework/morselib/include/mmhal_app.h \
  ../../../../framework/morselib/include/mmhal_os.h \
@@ -49,10 +50,10 @@ build/src/lwip/src/core/memp.o: \
  ../../../../framework/src/lwip/src/include/lwip/priv/tcp_priv.h \
  ../../../../framework/src/lwip/src/include/lwip/prot/tcp.h \
  ../../../../framework/src/lwip/src/include/morse/on_demand_timers.h \
+ ../../../../framework/src/lwip/src/include/lwip/api.h \
+ ../../../../framework/src/lwip/src/include/lwip/netbuf.h \
  ../../../../framework/src/lwip/src/include/lwip/altcp.h \
  ../../../../framework/src/lwip/src/include/lwip/ip4_frag.h \
- ../../../../framework/src/lwip/src/include/lwip/netbuf.h \
- ../../../../framework/src/lwip/src/include/lwip/api.h \
  ../../../../framework/src/lwip/src/include/lwip/priv/tcpip_priv.h \
  ../../../../framework/src/lwip/src/include/lwip/tcpip.h \
  ../../../../framework/src/lwip/src/include/lwip/timeouts.h \
@@ -85,6 +86,7 @@ build/src/lwip/src/core/memp.o: \
 ../../../../framework/src/platforms/mm-mm8108-ekh05/mm_shims/mmport.h:
 ../../../../framework/morselib/include/mmhal_core.h:
 ../../../../framework/src/mmipal/mmipal.h:
+../../../../framework/morselib/include/mmlog.h:
 ../../../../framework/src/lwip/port/arch/sys_arch.h:
 ../../../../framework/morselib/include/mmhal_app.h:
 ../../../../framework/morselib/include/mmhal_os.h:
@@ -121,10 +123,10 @@ build/src/lwip/src/core/memp.o: \
 ../../../../framework/src/lwip/src/include/lwip/priv/tcp_priv.h:
 ../../../../framework/src/lwip/src/include/lwip/prot/tcp.h:
 ../../../../framework/src/lwip/src/include/morse/on_demand_timers.h:
+../../../../framework/src/lwip/src/include/lwip/api.h:
+../../../../framework/src/lwip/src/include/lwip/netbuf.h:
 ../../../../framework/src/lwip/src/include/lwip/altcp.h:
 ../../../../framework/src/lwip/src/include/lwip/ip4_frag.h:
-../../../../framework/src/lwip/src/include/lwip/netbuf.h:
-../../../../framework/src/lwip/src/include/lwip/api.h:
 ../../../../framework/src/lwip/src/include/lwip/priv/tcpip_priv.h:
 ../../../../framework/src/lwip/src/include/lwip/tcpip.h:
 ../../../../framework/src/lwip/src/include/lwip/timeouts.h:

@@ -50,7 +50,7 @@ static void link_status_callback(const struct mmipal_link_status *link_status)
 
 
 
-static void udp_broadcast_tx_start(struct udp_pcb *pcb)
+static void udp_unicast_tx_start(struct udp_pcb *pcb)
 {
     //err_t err;
 
@@ -92,6 +92,22 @@ static void udp_broadcast_tx_start(struct udp_pcb *pcb)
             	    uint32_t time_us = mcu_cycles / freq_mhz;
 
             		printf("[Profilage] Temps de traitement MCU : %lu us (%lu cycles)\n", time_us, mcu_cycles);
+
+            	    struct mmwlan_vif_channel_info chan_info;
+
+            	    // Remplace MMWLAN_VIF_STA par le nom exact trouvé dans l'enum si besoin
+            	    enum mmwlan_status status = mmwlan_get_vif_channel_info(MMWLAN_VIF_STA, &chan_info);
+
+            	    if (status == MMWLAN_SUCCESS) {
+            	        printf("\n--- Channel Info Diagnostic ---\n");
+            	        printf("Operating Class (op_class)       : %u\n", chan_info.op_class);
+            	        printf("S1G Channel Number (s1g_chan_num): %u\n", chan_info.s1g_chan_num);
+            	        printf("Bandwidth MHz (pri_bw_mhz)       : %u MHz\n", chan_info.pri_bw_mhz);
+            	        printf("Primary 1MHz Index (pri_1mhz_idx): %u\n", chan_info.pri_1mhz_chan_idx);
+            	        printf("-------------------------------\n\n");
+            	    } else {
+            	        printf("Error: Failed to get channel info (Status: %d)\n", status);
+            	    }
             	}
 
                 spi_packet_received = false;
@@ -103,6 +119,7 @@ static void udp_broadcast_tx_start(struct udp_pcb *pcb)
             } else {
                // mmosal_task_sleep(1);
             }
+
         }
 }
 
@@ -127,7 +144,7 @@ static struct udp_pcb *init_udp_pcb(void)
 
 void SPI_Slave_Init(void)
 {
-    // 1. Activer les horloges du SPI1, du Port E(SPI) et port D (Spare GPIO)(go no go jetson)
+    // 1. Activer les horloges du SPI1, du Port E(SPI) et port D (Spare GPIO)
     __HAL_RCC_SPI1_CLK_ENABLE();
     __HAL_RCC_GPIOE_CLK_ENABLE();
     __HAL_RCC_GPIOD_CLK_ENABLE();
@@ -164,7 +181,6 @@ void SPI_Slave_Init(void)
         printf("SPI Esclave (SPI1) initialise sur PE12 a PE15 !\n");
     }
 
-        // --- LES 2 LIGNES MANQUANTES POUR LE MODE '_IT' --- mode IT ?
 	HAL_NVIC_SetPriority(SPI1_IRQn, 5, 0);
 	HAL_NVIC_EnableIRQ(SPI1_IRQn);
 
@@ -233,6 +249,7 @@ void app_init(void)
     printf("forcage OK : 8 MHz / MCS 1 force.\n");
 
 
+
     while (!is_network_ready) {
         mmosal_task_sleep(10);
     }
@@ -240,6 +257,6 @@ void app_init(void)
     struct udp_pcb *pcb = init_udp_pcb();
     if (pcb != NULL) {
     	pcb->tos = 0xC0;
-        udp_broadcast_tx_start(pcb);
+        udp_unicast_tx_start(pcb);
     }
 }

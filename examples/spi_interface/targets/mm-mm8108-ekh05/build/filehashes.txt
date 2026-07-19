@@ -7,6 +7,7 @@
  0x34e20b19 ../../../../framework/src/platforms/mm-mm8108-ekh05/bsp/Core/Src/stm32u5xx_it.c
  0x5c1bf80e ../../../../framework/src/platforms/mm-mm8108-ekh05/bsp/Core/Src/system_stm32u5xx.c
  0x1187776c ../../../../framework/src/platforms/mm-mm8108-ekh05/bsp/Core/Src/ecp_alt.c
+ 0x4fb5fbb7 ../../../../framework/src/platforms/mm-mm8108-ekh05/bsp/Core/Src/ecp_hal.c
  0x1423eaf3 ../../../../framework/src/platforms/mm-mm8108-ekh05/bsp/Core/Src/ecp_curves_alt.c
  0x4c3140ab ../../../../framework/src/bsps/stm32cubeu5/Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal.c
  0xcd89b559 ../../../../framework/src/bsps/stm32cubeu5/Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_cortex.c
@@ -52,6 +53,7 @@
  0xae48d4ae ../../../../framework/src/platforms/mm-mm8108-ekh05/mm_shims/mmhal_wlan_binaries.c
  0xf7439bb6 ../../../../framework/src/platforms/mm-mm8108-ekh05/mm_shims/mmosal_shim_fileio.c
  0x3814ad1d ../../../../framework/src/platforms/mm-mm8108-ekh05/mm_shims/mmosal_shim_freertos.c
+ 0x0d289f6d ../../../../framework/src/platforms/mm-mm8108-ekh05/mm_shims/mmosal_shim_alloc.c
  0xdd1d8369 ../../../../framework/src/platforms/mm-mm8108-ekh05/mm_shims/mmosal_shim_libc_stubs.c
  0x8cba4e85 ../../../../framework/src/mmconfig/mmconfig.c
  0xace81ba2 ../../../../framework/src/slip/slip.c

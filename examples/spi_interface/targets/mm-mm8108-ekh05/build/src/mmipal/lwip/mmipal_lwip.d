@@ -8,12 +8,13 @@ build/src/mmipal/lwip/mmipal_lwip.o: \
  ../../../../framework/src/bsps/stm32cubeu5/Drivers/CMSIS/Include/mpu_armv8.h \
  ../../../../framework/src/bsps/stm32cubeu5/Drivers/CMSIS/Device/ST/STM32U5xx/Include/system_stm32u5xx.h \
  ../../../../framework/src/mmipal/mmipal.h \
+ ../../../../framework/morselib/include/mmlog.h \
+ ../../../../framework/morselib/include/mmosal.h \
+ ../../../../framework/src/platforms/mm-mm8108-ekh05/mm_shims/mmport.h \
  ../../../../framework/src/mmipal/lwip/mmnetif.h \
  ../../../../framework/src/lwip/src/include/lwip/netif.h \
  ../../../../framework/src/lwip/src/include/lwip/opt.h \
  ../../../../framework/src/lwip/port/lwipopts.h \
- ../../../../framework/morselib/include/mmosal.h \
- ../../../../framework/src/platforms/mm-mm8108-ekh05/mm_shims/mmport.h \
  ../../../../framework/morselib/include/mmhal_core.h \
  ../../../../framework/src/lwip/port/arch/sys_arch.h \
  ../../../../framework/morselib/include/mmhal_app.h \
@@ -34,8 +35,6 @@ build/src/mmipal/lwip/mmipal_lwip.o: \
  ../../../../framework/src/lwip/src/include/lwip/priv/memp_std.h \
  ../../../../framework/src/lwip/src/include/lwip/priv/memp_priv.h \
  ../../../../framework/src/lwip/src/include/lwip/priv/mem_priv.h \
- ../../../../framework/morselib/include/mmwlan.h \
- ../../../../framework/morselib/include/mmpkt.h \
  ../../../../framework/src/mmutils/mmutils.h \
  ../../../../framework/src/lwip/src/include/lwip/api.h \
  ../../../../framework/src/lwip/src/include/lwip/netbuf.h \
@@ -76,12 +75,13 @@ build/src/mmipal/lwip/mmipal_lwip.o: \
 ../../../../framework/src/bsps/stm32cubeu5/Drivers/CMSIS/Include/mpu_armv8.h:
 ../../../../framework/src/bsps/stm32cubeu5/Drivers/CMSIS/Device/ST/STM32U5xx/Include/system_stm32u5xx.h:
 ../../../../framework/src/mmipal/mmipal.h:
+../../../../framework/morselib/include/mmlog.h:
+../../../../framework/morselib/include/mmosal.h:
+../../../../framework/src/platforms/mm-mm8108-ekh05/mm_shims/mmport.h:
 ../../../../framework/src/mmipal/lwip/mmnetif.h:
 ../../../../framework/src/lwip/src/include/lwip/netif.h:
 ../../../../framework/src/lwip/src/include/lwip/opt.h:
 ../../../../framework/src/lwip/port/lwipopts.h:
-../../../../framework/morselib/include/mmosal.h:
-../../../../framework/src/platforms/mm-mm8108-ekh05/mm_shims/mmport.h:
 ../../../../framework/morselib/include/mmhal_core.h:
 ../../../../framework/src/lwip/port/arch/sys_arch.h:
 ../../../../framework/morselib/include/mmhal_app.h:
@@ -102,8 +102,6 @@ build/src/mmipal/lwip/mmipal_lwip.o: \
 ../../../../framework/src/lwip/src/include/lwip/priv/memp_std.h:
 ../../../../framework/src/lwip/src/include/lwip/priv/memp_priv.h:
 ../../../../framework/src/lwip/src/include/lwip/priv/mem_priv.h:
-../../../../framework/morselib/include/mmwlan.h:
-../../../../framework/morselib/include/mmpkt.h:
 ../../../../framework/src/mmutils/mmutils.h:
 ../../../../framework/src/lwip/src/include/lwip/api.h:
 ../../../../framework/src/lwip/src/include/lwip/netbuf.h:

@@ -26,6 +26,9 @@ build/src/platforms/mm-mm8108-ekh05/mm_shims/mmosal_shim_freertos.o: \
  ../../../../framework/src/freertos/include/queue.h \
  ../../../../framework/src/freertos/include/timers.h \
  ../../../../framework/morselib/include/mmhal_os.h \
+ ../../../../framework/morselib/include/mmhal_wlan.h \
+ ../../../../framework/morselib/include/mmpkt.h \
+ ../../../../framework/morselib/include/mmwlan.h \
  ../../../../framework/morselib/include/mmlog.h
 ../../../../framework/src/bsps/stm32cubeu5/Drivers/CMSIS/Device/ST/STM32U5xx/Include/stm32u585xx.h:
 ../../../../framework/src/bsps/stm32cubeu5/Drivers/CMSIS/Include/core_cm33.h:
@@ -53,4 +56,7 @@ build/src/platforms/mm-mm8108-ekh05/mm_shims/mmosal_shim_freertos.o: \
 ../../../../framework/src/freertos/include/queue.h:
 ../../../../framework/src/freertos/include/timers.h:
 ../../../../framework/morselib/include/mmhal_os.h:
+../../../../framework/morselib/include/mmhal_wlan.h:
+../../../../framework/morselib/include/mmpkt.h:
+../../../../framework/morselib/include/mmwlan.h:
 ../../../../framework/morselib/include/mmlog.h:

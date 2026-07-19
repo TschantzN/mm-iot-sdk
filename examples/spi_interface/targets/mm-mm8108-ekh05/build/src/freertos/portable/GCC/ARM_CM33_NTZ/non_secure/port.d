@@ -20,6 +20,7 @@ build/src/freertos/portable/GCC/ARM_CM33_NTZ/non_secure/port.o: \
  ../../../../framework/src/freertos/include/task.h \
  ../../../../framework/src/freertos/include/list.h \
  ../../../../framework/src/freertos/include/mpu_wrappers.h \
+ ../../../../framework/src/freertos/include/mpu_syscall_numbers.h \
  ../../../../framework/src/freertos/portable/GCC/ARM_CM33_NTZ/non_secure/portasm.h
 ../../../../framework/src/bsps/stm32cubeu5/Drivers/CMSIS/Device/ST/STM32U5xx/Include/stm32u585xx.h:
 ../../../../framework/src/bsps/stm32cubeu5/Drivers/CMSIS/Include/core_cm33.h:
@@ -41,4 +42,5 @@ build/src/freertos/portable/GCC/ARM_CM33_NTZ/non_secure/port.o: \
 ../../../../framework/src/freertos/include/task.h:
 ../../../../framework/src/freertos/include/list.h:
 ../../../../framework/src/freertos/include/mpu_wrappers.h:
+../../../../framework/src/freertos/include/mpu_syscall_numbers.h:
 ../../../../framework/src/freertos/portable/GCC/ARM_CM33_NTZ/non_secure/portasm.h:

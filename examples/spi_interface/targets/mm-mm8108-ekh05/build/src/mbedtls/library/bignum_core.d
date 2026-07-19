@@ -28,6 +28,7 @@ build/src/mbedtls/library/bignum_core.o: \
  ../../../../framework/src/mbedtls/library/constant_time_impl.h \
  ../../../../framework/src/mbedtls/include/mbedtls/platform.h \
  ../../../../framework/src/mbedtls/library/bignum_core.h \
+ ../../../../framework/src/mbedtls/library/bignum_core_invasive.h \
  ../../../../framework/src/mbedtls/library/bn_mul.h
 ../../../../framework/src/bsps/stm32cubeu5/Drivers/CMSIS/Device/ST/STM32U5xx/Include/stm32u585xx.h:
 ../../../../framework/src/bsps/stm32cubeu5/Drivers/CMSIS/Include/core_cm33.h:
@@ -57,4 +58,5 @@ build/src/mbedtls/library/bignum_core.o: \
 ../../../../framework/src/mbedtls/library/constant_time_impl.h:
 ../../../../framework/src/mbedtls/include/mbedtls/platform.h:
 ../../../../framework/src/mbedtls/library/bignum_core.h:
+../../../../framework/src/mbedtls/library/bignum_core_invasive.h:
 ../../../../framework/src/mbedtls/library/bn_mul.h:

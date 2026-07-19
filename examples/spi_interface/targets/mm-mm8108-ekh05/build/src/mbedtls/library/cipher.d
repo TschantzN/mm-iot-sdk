@@ -23,6 +23,7 @@ build/src/mbedtls/library/cipher.o: \
  ../../../../framework/src/mbedtls/include/mbedtls/private_access.h \
  ../../../../framework/src/mbedtls/include/mbedtls/platform_util.h \
  ../../../../framework/src/mbedtls/include/mbedtls/platform_time.h \
+ ../../../../framework/src/mbedtls/library/cipher_invasive.h \
  ../../../../framework/src/mbedtls/library/cipher_wrap.h \
  ../../../../framework/src/mbedtls/include/mbedtls/error.h \
  ../../../../framework/src/mbedtls/include/mbedtls/constant_time.h \
@@ -55,6 +56,7 @@ build/src/mbedtls/library/cipher.o: \
 ../../../../framework/src/mbedtls/include/mbedtls/private_access.h:
 ../../../../framework/src/mbedtls/include/mbedtls/platform_util.h:
 ../../../../framework/src/mbedtls/include/mbedtls/platform_time.h:
+../../../../framework/src/mbedtls/library/cipher_invasive.h:
 ../../../../framework/src/mbedtls/library/cipher_wrap.h:
 ../../../../framework/src/mbedtls/include/mbedtls/error.h:
 ../../../../framework/src/mbedtls/include/mbedtls/constant_time.h:

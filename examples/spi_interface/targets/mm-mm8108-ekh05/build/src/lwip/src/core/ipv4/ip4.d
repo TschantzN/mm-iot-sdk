@@ -13,6 +13,7 @@ build/src/lwip/src/core/ipv4/ip4.o: \
  ../../../../framework/src/platforms/mm-mm8108-ekh05/mm_shims/mmport.h \
  ../../../../framework/morselib/include/mmhal_core.h \
  ../../../../framework/src/mmipal/mmipal.h \
+ ../../../../framework/morselib/include/mmlog.h \
  ../../../../framework/src/lwip/port/arch/sys_arch.h \
  ../../../../framework/morselib/include/mmhal_app.h \
  ../../../../framework/morselib/include/mmhal_os.h \
@@ -52,6 +53,9 @@ build/src/lwip/src/core/ipv4/ip4.o: \
  ../../../../framework/src/lwip/src/include/lwip/tcpbase.h \
  ../../../../framework/src/lwip/src/include/lwip/prot/tcp.h \
  ../../../../framework/src/lwip/src/include/morse/on_demand_timers.h \
+ ../../../../framework/src/lwip/src/include/lwip/api.h \
+ ../../../../framework/src/lwip/src/include/lwip/netbuf.h \
+ ../../../../framework/src/lwip/src/include/lwip/sys.h \
  ../../../../framework/src/lwip/src/include/lwip/autoip.h \
  ../../../../framework/src/lwip/src/include/lwip/prot/iana.h
 ../../../../framework/src/bsps/stm32cubeu5/Drivers/CMSIS/Device/ST/STM32U5xx/Include/stm32u585xx.h:
@@ -67,6 +71,7 @@ build/src/lwip/src/core/ipv4/ip4.o: \
 ../../../../framework/src/platforms/mm-mm8108-ekh05/mm_shims/mmport.h:
 ../../../../framework/morselib/include/mmhal_core.h:
 ../../../../framework/src/mmipal/mmipal.h:
+../../../../framework/morselib/include/mmlog.h:
 ../../../../framework/src/lwip/port/arch/sys_arch.h:
 ../../../../framework/morselib/include/mmhal_app.h:
 ../../../../framework/morselib/include/mmhal_os.h:
@@ -106,5 +111,8 @@ build/src/lwip/src/core/ipv4/ip4.o: \
 ../../../../framework/src/lwip/src/include/lwip/tcpbase.h:
 ../../../../framework/src/lwip/src/include/lwip/prot/tcp.h:
 ../../../../framework/src/lwip/src/include/morse/on_demand_timers.h:
+../../../../framework/src/lwip/src/include/lwip/api.h:
+../../../../framework/src/lwip/src/include/lwip/netbuf.h:
+../../../../framework/src/lwip/src/include/lwip/sys.h:
 ../../../../framework/src/lwip/src/include/lwip/autoip.h:
 ../../../../framework/src/lwip/src/include/lwip/prot/iana.h:

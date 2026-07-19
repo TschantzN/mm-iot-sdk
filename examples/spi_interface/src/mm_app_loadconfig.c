@@ -116,7 +116,7 @@ void load_mmipal_init_args(struct mmipal_init_args *args)
             if (boolval)
             {
                 /* DHCP offload mode */
-                args->mode = MMIPAL_DHCP_OFFLOAD;
+               // args->mode = MMIPAL_DHCP_OFFLOAD;
             }
             else
             {
@@ -134,18 +134,18 @@ void load_mmipal_init_args(struct mmipal_init_args *args)
     {
         printf("Initialize IPv4 using DHCP...\n");
     }
-    else if (args->mode == MMIPAL_DHCP_OFFLOAD)
+    /*else if (args->mode == MMIPAL_DHCP_OFFLOAD)
     {
         printf("Initialize IPv4 using DHCP offload...\n");
-    }
+    }*/
     else
     {
         printf("Initialize IPv4 with static IP: %s...\n", args->ip_addr);
     }
 
     /* Check if any offload features are enabled */
-    (void)mmconfig_read_bool("ip.offload_arp_response", &args->offload_arp_response);
-    (void)mmconfig_read_uint32("ip.offload_arp_refresh_s", &args->offload_arp_refresh_s);
+    //(void)mmconfig_read_bool("ip.offload_arp_response", &args->offload_arp_response);
+    //(void)mmconfig_read_uint32("ip.offload_arp_refresh_s", &args->offload_arp_refresh_s);
 
 #if defined(MMIPAL_IPV6_ENABLED) && MMIPAL_IPV6_ENABLED
     /* Load default static IPv6 in case we don't find the key */
